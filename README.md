@@ -23,7 +23,7 @@ As you go through this setup, please find all the most up to date information in
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/data-freelancer-mastermind/mkdocs-website-template.git
+   git clone https://github.com/datalumina/mkdocs-website-template.git
    cd mkdocs-website-template
    ```
 
