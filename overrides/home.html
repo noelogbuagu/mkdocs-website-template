@@ -1,0 +1,73 @@
+{#-
+  Plurobi landing page shell.
+
+  Extends Material's base layout but replaces the standard chrome (top header,
+  navigation sidebar, table of contents) with the bespoke fixed left sidebar and
+  footer from the Figma design. The actual section content is authored as HTML in
+  docs/index.md and injected via {{ page.content }}, keeping content and chrome
+  cleanly separated.
+-#}
+{% extends "main.html" %}
+
+{#- Remove Material's top header on the landing page -#}
+{% block header %}{% endblock %}
+
+{#- Remove the top navigation tabs on the landing page -#}
+{% block tabs %}{% endblock %}
+
+{#- Remove Material's navigation + table-of-contents sidebars -#}
+{% block site_nav %}{% endblock %}
+
+{#- Replace the default content container with the custom landing layout -#}
+{% block container %}
+  {% set contact = config.extra.contact_url | d("#about", true) %}
+  <div class="pl-shell">
+
+    <aside class="pl-sidebar">
+      <div class="pl-sidebar__top">
+        <a class="pl-brand" href="{{ nav.homepage.url | url }}">
+          <img class="pl-brand__mark" src="{{ 'assets/plurobi-mark.png' | url }}" alt="Plurobi logo">
+          <span class="pl-brand__name">Plurobi</span>
+        </a>
+        <p class="pl-brand__tagline">Data and AI automation for SME&rsquo;s</p>
+
+        <hr class="pl-divider">
+
+        <nav class="pl-nav" aria-label="Sections">
+          <a href="#home">01. Home</a>
+          <a href="#services">02. Services</a>
+          <a href="#impact">03. Impact</a>
+          <a href="#projects">04. Projects</a>
+          <a href="#process">05. Process</a>
+          <a href="#about">06. About</a>
+          <a href="{{ 'blog/' | url }}">07. Blog</a>
+        </nav>
+      </div>
+
+      <div class="pl-sidebar__bottom">
+        <p class="pl-status"><span class="pl-dot"></span> Available for projects</p>
+        <a class="pl-btn pl-btn--primary pl-btn--block" href="{{ contact }}">
+          Start a project <span class="pl-arrow">&rarr;</span>
+        </a>
+        <p class="pl-stack">Python <span>.</span> AI <span>.</span> Automation <span>.</span></p>
+      </div>
+    </aside>
+
+    <main class="pl-main">
+      {{ page.content }}
+
+      <footer class="pl-footer">
+        <a class="pl-brand pl-brand--sm" href="{{ nav.homepage.url | url }}">
+          <img class="pl-brand__mark" src="{{ 'assets/plurobi-mark.png' | url }}" alt="Plurobi logo">
+          <span class="pl-brand__name">Plurobi</span>
+        </a>
+        <span class="pl-footer__tagline">Data and AI automation for SME&rsquo;s</span>
+        <span class="pl-status pl-status--sm"><span class="pl-dot"></span> Available for projects</span>
+      </footer>
+    </main>
+
+  </div>
+{% endblock %}
+
+{#- The custom footer above replaces Material's default footer on the landing page -#}
+{% block footer %}{% endblock %}

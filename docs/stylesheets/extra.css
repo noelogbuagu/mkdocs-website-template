@@ -1,57 +1,105 @@
-/* Light theme custom colors */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color: #000111;
-  --md-accent-fg-color: #2856f7;
-  --md-typeset-a-color: var(--md-accent-fg-color);
-  --md-footer-bg-color: var(--md-primary-fg-color);
+/* =========================================================================
+   Plurobi brand theme — global tokens and Material overrides
+   Applies to every page (landing, blog, case studies).
+   Palette source: Figma brand board + design tokens.
+   ========================================================================= */
+
+:root {
+  --pl-orange: #ff5d00;        /* accent / primary action  */
+  --pl-orange-hover: #e85002;  /* hover state              */
+  --pl-black: #000000;         /* page background          */
+  --pl-white: #ffffff;         /* headings / strong text   */
+  --pl-gray: #a7a7a7;          /* body text                */
+  --pl-line: #333333;          /* hairline dividers        */
+  --pl-green: #22c55e;         /* metrics / status dot     */
+  --pl-card: #0e0e0e;          /* card surface             */
+  --pl-card-border: rgba(255, 255, 255, 0.08);
+  --pl-radius: 12px;
 }
 
-/* Dark theme custom colors */
+/* Map the Material "custom" primary/accent onto the Plurobi palette and
+   force a true-black dark scheme to match the brand board. */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #000111;
-  --md-default-bg-color: #090d1d;
-  --md-accent-fg-color: #8e92f8;
-  --md-typeset-a-color: var(--md-accent-fg-color);
+  --md-default-bg-color: var(--pl-black);
+  --md-default-fg-color: var(--pl-gray);
+  --md-default-fg-color--light: var(--pl-gray);
+  --md-default-fg-color--lighter: rgba(167, 167, 167, 0.5);
+
+  --md-primary-fg-color: #050505;
+  --md-primary-fg-color--light: #1a1a1a;
+  --md-primary-fg-color--dark: #000000;
+
+  --md-accent-fg-color: var(--pl-orange);
+  --md-accent-fg-color--transparent: rgba(255, 93, 0, 0.1);
+  --md-typeset-a-color: var(--pl-orange);
+
+  --md-footer-bg-color: #050505;
+  --md-footer-bg-color--dark: #000000;
+
+  --md-code-bg-color: #0e0e0e;
 }
 
-/* Dark Theme Custom Button */
+/* Headings render in white for contrast on the black background */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4 {
+  color: var(--pl-white);
+}
+
+/* -------------------------------------------------------------------------
+   Buttons (used on blog / case-study pages via {.md-button})
+   ------------------------------------------------------------------------- */
+[data-md-color-scheme="slate"] .md-button--primary,
 [data-md-color-scheme="slate"] .md-button {
-  background-color: var(--md-accent-fg-color);
-  border-color: var(--md-accent-fg-color);
+  background-color: var(--pl-orange);
+  border-color: var(--pl-orange);
+  color: var(--pl-white);
 }
 
-/* Optional: Custom hover effects */
-[data-md-color-scheme="slate"] .md-button:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #000000;
+[data-md-color-scheme="slate"] .md-button:hover,
+[data-md-color-scheme="slate"] .md-button--primary:hover {
+  background-color: var(--pl-orange-hover);
+  border-color: var(--pl-orange-hover);
+  color: var(--pl-white);
 }
 
-/* Footer Section */
-.md-footer {
-  background-color: #090d1d;
+/* -------------------------------------------------------------------------
+   Header / tabs on inner pages
+   ------------------------------------------------------------------------- */
+.md-header {
+  background-color: #050505;
+  border-bottom: 1px solid var(--pl-line);
 }
 
+.md-tabs {
+  background-color: #050505;
+}
+
+.md-header__title,
+.md-tabs__link {
+  color: var(--pl-white);
+}
+
+.md-tabs__link--active {
+  color: var(--pl-orange);
+}
+
+/* Footer meta bar */
 .md-footer-meta {
-  background-color: #000111;
+  background-color: #000000;
 }
 
-/* Testimonial cards */
-.grid.cards.testimonials {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-    margin: 1rem 0;
+/* -------------------------------------------------------------------------
+   Grid cards (case-studies / blog) themed to match the dark surface
+   ------------------------------------------------------------------------- */
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > :not(ul) {
+  background-color: var(--pl-card);
+  border: 1px solid var(--pl-card-border);
+  border-radius: var(--pl-radius);
 }
 
-.grid.cards.testimonials > * {
-    margin-top: 0 !important;
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--pl-orange);
 }
-
-/* Style the author name and title */
-.grid.cards.testimonials p:nth-child(2) {
-    margin-top: -0.5rem;
-    color: var(--md-default-fg-color--light);
-    font-size: 0.9rem;
-}
-
-

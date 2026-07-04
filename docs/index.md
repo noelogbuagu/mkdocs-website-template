@@ -1,169 +1,195 @@
 ---
-title: About Me
-description: Explore AI, data science, and entrepreneurship with Dave Ebbelaar. Learn about Datalumina, AI tutorials, freelancing, and innovative AI solutions for businesses.
-keywords: Dave Ebbelaar, AI entrepreneur, Datalumina, AI tutorials, Data Freelancer, GenAI Launchpad
-author: Dave Ebbelaar
-canonical_url: https://www.daveebbelaar.com/
+title: Plurobi — Data & AI Automation for SMEs
+description: Plurobi builds AI systems that remove manual work. We help SMEs replace manual reporting, scattered spreadsheets, and repetitive operations with automated data pipelines, AI workflows, and real-time insights.
+template: home.html
+hide:
+  - navigation
+  - toc
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dave Ebbelaar",
-  "url": "https://www.daveebbelaar.com/",
-  "image": "https://avatars.githubusercontent.com/u/34709402?v=4",
-  "sameAs": [
-    "https://www.youtube.com/channel/UCn8ujwUInbJkBhffxqAPBVQ",
-    "https://www.youtube.com/@daveebbelaar",
-    "https://www.linkedin.com/in/daveebbelaar/",
-    "https://github.com/daveebbelaar"
-    "https://www.skool.com/@daveebbelaar"
-  ],
-  "jobTitle": "Founder & CEO",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Datalumina",
-    "url": "https://www.datalumina.com/"
-  },
-}
-</script>
+<!--
+  Plurobi landing page content.
+  Authored as plain HTML so the layout matches the Figma design exactly.
+  The fixed sidebar and footer live in overrides/home.html.
+  Replace the About photo
+  (assets/obi.jpg) with your real details.
+-->
 
-<div class="hero-section grid-container" markdown>
+<!-- ===================== 01. HERO ===================== -->
+<section class="pl-hero" id="home">
+  <img class="pl-hero__ring" src="assets/plurobi-mark.png" alt="" aria-hidden="true">
+  <p class="pl-eyebrow">AI ENGINEER <span class="pl-eyebrow__dot">&bull;</span> DATA AUTOMATION</p>
+  <h1 class="pl-hero__title">I build AI systems that<br><span class="pl-accent">remove manual work</span></h1>
+  <p class="pl-hero__lead">I help SMEs replace manual reporting, scattered spreadsheets, and repetitive operations with automated data pipelines, AI workflows, and real-time insights.</p>
+  <div class="pl-hero__actions">
+    <a class="pl-btn pl-btn--primary" href="#projects">View works <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--ghost" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book a Call</a>
+  </div>
+</section>
 
-<div class="text-intro-grid" markdown>
+<!-- ===================== 02. SERVICES ===================== -->
+<section class="pl-section" id="services">
+  <header class="pl-section__head">
+    <p class="pl-eyebrow">02. SERVICES</p>
+    <h2 class="pl-section__title">What I help automate</h2>
+    <p class="pl-section__lead">Every engagement ends with a system that runs itself, not a report you have to maintain.</p>
+  </header>
 
-# Turn AI complexity into your competitive advantage
+  <div class="pl-cards pl-cards--3">
+    <article class="pl-card">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="18" y1="20" x2="18" y2="4"/></svg>
+      </span>
+      <h3 class="pl-card__title">Automated Reporting</h3>
+      <p class="pl-card__text">Replace manual CSV exports and spreadsheet updates with reporting systems that run themselves.</p>
+    </article>
 
-### I have 5+ years experience doing just that
+    <article class="pl-card">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </span>
+      <h3 class="pl-card__title">AI Workflows</h3>
+      <p class="pl-card__text">Classify, flag, route, and summarise work automatically so teams can act faster.</p>
+    </article>
 
-- Are you struggling to keep up with the rapid pace of AI innovation?
+    <article class="pl-card">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+      </span>
+      <h3 class="pl-card__title">Data Pipeline</h3>
+      <p class="pl-card__text">Connect your tools, clean your data, and create one reliable source of truth.</p>
+    </article>
+  </div>
+</section>
 
-- Do you need help translating AI hype into real business results?
+<!-- ===================== 03. IMPACT ===================== -->
+<section class="pl-section" id="impact">
+  <header class="pl-section__head">
+    <p class="pl-eyebrow">03. IMPACT</p>
+    <h2 class="pl-section__title">Real results from operational systems</h2>
+    <p class="pl-section__lead">Not demo projects. Production systems running inside live businesses.</p>
+  </header>
 
-- Want to implement AI effectively before competitors get ahead?
+  <div class="pl-cards pl-cards--2">
+    <article class="pl-stat">
+      <p class="pl-stat__value">92%</p>
+      <p class="pl-stat__label">Reduction in daily reporting time</p>
+      <p class="pl-stat__note">Manual multi-source reporting replaced by an automated pipeline.</p>
+    </article>
+    <article class="pl-stat">
+      <p class="pl-stat__value">165k</p>
+      <p class="pl-stat__label">Annual LTV opportunity identified</p>
+      <p class="pl-stat__note">Surfaced from data that was previously locked in spreadsheets.</p>
+    </article>
+    <article class="pl-stat">
+      <p class="pl-stat__value">66k</p>
+      <p class="pl-stat__label">Monthly revenue pipeline shipped</p>
+      <p class="pl-stat__note">Tracked and reported in real time instead of month-end.</p>
+    </article>
+    <article class="pl-stat">
+      <p class="pl-stat__value">92%</p>
+      <p class="pl-stat__label">From data infrastructure to deployed AI workflows</p>
+      <p class="pl-stat__note">End-to-end delivery, from raw data to production system.</p>
+    </article>
+  </div>
+</section>
 
-- Looking for technical expertise and a clear roadmap for AI solutions?
+<!-- ===================== 04. PROJECTS ===================== -->
+<section class="pl-section" id="projects">
+  <header class="pl-section__head">
+    <p class="pl-eyebrow">04. PROJECTS</p>
+    <h2 class="pl-section__title">Selected works</h2>
+    <p class="pl-section__lead">Each project replaced a manual process with a system that just runs.</p>
+  </header>
 
-- Need someone who understands both technical and business perspectives?
+  <div class="pl-projects">
+    <a class="pl-project" href="portfolio/">
+      <div class="pl-project__body">
+        <h3 class="pl-project__title">Healthcare reporting automation</h3>
+        <p class="pl-project__text">Replaced daily reporting from 6 sources in 3 minutes total through an automated reporting pipeline.</p>
+        <div class="pl-tags"><span>Python</span><span>SQL</span><span>Automation</span></div>
+      </div>
+      <span class="pl-project__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
 
-[Book Free Intro Call :material-arrow-top-right:](https://www.calendly.com){ .md-button .md-button--primary }
+    <a class="pl-project" href="portfolio/">
+      <div class="pl-project__body">
+        <h3 class="pl-project__title">Operations data pipeline</h3>
+        <p class="pl-project__text">Unified scattered CSVs and databases into a single source of truth with real-time dashboards.</p>
+        <div class="pl-tags"><span>Python</span><span>ETL</span><span>Dashboards</span></div>
+      </div>
+      <span class="pl-project__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
 
-</div>
+    <a class="pl-project" href="portfolio/">
+      <div class="pl-project__body">
+        <h3 class="pl-project__title">AI document triage workflow</h3>
+        <p class="pl-project__text">Classified, routed, and summarised inbound documents automatically so the team could act faster.</p>
+        <div class="pl-tags"><span>OpenAI</span><span>Python</span><span>Automation</span></div>
+      </div>
+      <span class="pl-project__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
+  </div>
+</section>
 
-<div class="profile-image-grid" markdown>
+<!-- ===================== 05. PROCESS ===================== -->
+<section class="pl-section" id="process">
+  <header class="pl-section__head">
+    <p class="pl-eyebrow">05. PROCESS</p>
+    <h2 class="pl-section__title">How I operate</h2>
+    <p class="pl-section__lead">Tools and method I use to build production-ready systems.</p>
+  </header>
 
-![Dave Ebbelaar, AI Entrepreneur and Educator](assets/@daveebbelaar.jpg){ .profile-image alt="Portrait of Dave Ebbelaar, AI entrepreneur and educator" }
+  <div class="pl-tags pl-tags--stack">
+    <span>Python</span><span>SQL</span><span>FastAPI</span><span>OpenAI</span><span>Pandas</span><span>Docker</span><span>AWS</span>
+  </div>
 
-</div>
+  <ol class="pl-steps">
+    <li class="pl-step">
+      <span class="pl-step__num">01</span>
+      <div class="pl-step__body">
+        <h3 class="pl-step__title">Diagnose</h3>
+        <p class="pl-step__text">Understand the manual process and where time is being lost.</p>
+      </div>
+    </li>
+    <li class="pl-step">
+      <span class="pl-step__num">02</span>
+      <div class="pl-step__body">
+        <h3 class="pl-step__title">Connect</h3>
+        <p class="pl-step__text">Bring data from spreadsheets, systems, and databases into one place.</p>
+      </div>
+    </li>
+    <li class="pl-step">
+      <span class="pl-step__num">03</span>
+      <div class="pl-step__body">
+        <h3 class="pl-step__title">Automate</h3>
+        <p class="pl-step__text">Build the reporting, AI, or workflow layer.</p>
+      </div>
+    </li>
+    <li class="pl-step">
+      <span class="pl-step__num">04</span>
+      <div class="pl-step__body">
+        <h3 class="pl-step__title">Deploy</h3>
+        <p class="pl-step__text">Ship a reliable system that teams can use immediately.</p>
+      </div>
+    </li>
+  </ol>
+</section>
 
-</div>
+<!-- ===================== 06. ABOUT ===================== -->
+<section class="pl-section" id="about">
+  <header class="pl-section__head">
+    <p class="pl-eyebrow">06. ABOUT</p>
+    <h2 class="pl-section__title">Hey, I&rsquo;m Obi,</h2>
+  </header>
 
-## About me
-
-Hi! I'm Dave, an entrepreneur and educator from the Netherlands. I work with technical professionals facing the overwhelming pace of AI innovation and businesses struggling to translate AI hype into competitive advantage. Whether you're a developer watching your skills becoming obsolete or a company unsure how to implement AI effectively—the challenge is the same: how to effectively use this technology before your competitors do.
-
-My artificial intelligence journey spans over a decade, with bachelor's and master's degrees in the field and experience building custom data and AI systems across utilities, government, and e-commerce sectors. My tech stack includes Python, PostgreSQL, ML, FastAPI, OpenAI, Claude, Azure, vector databases, RAG, and LLM integration for enterprise applications.
-
-## Why work with me?
-
-Here's what sets me apart and how I can help drive value for your business:
-
-<div class="grid cards" markdown>
-
--   :fontawesome-solid-building-user:{ .lg .middle } Proven Business Experience
-
-    ---
-
-    As the founder of Datalumina, I bring entrepreneurial insight to every project. I understand both the technical and business sides of AI implementation, ensuring solutions that deliver real ROI and align with your business goals.
-
--   :material-youtube:{ .lg .middle } Educator & Communicator
-
-    ---
-
-    My experience as a content creator and educator means I can break down complex technical concepts into clear, actionable insights. You'll always understand the 'why' behind technical decisions and get clear progress updates.
-
--   :material-school:{ .lg .middle } Industry Expert
-
-    ---
-
-    With over a decade in AI and data science, including work across utilities, government, and e-commerce sectors, I bring battle-tested expertise to your projects. My solutions are built on real-world experience, not just theory.
-
--   :material-rocket:{ .lg .middle } Fast Implementation
-
-    ---
-
-    I specialize in rapid development and deployment of AI solutions. Using modern tools and proven frameworks, I can help you move from concept to production faster, giving you a competitive edge in today's fast-paced market.
-
-</div>
-
-## What my past clients say about my work
-
-<div class="grid cards testimonials" markdown>
-
--   :material-format-quote-open:{ .lg .middle } Adrian Dragomir
-    
-    Founder at Sferal
-
-    ---
-
-    "Dave is a true professional and my collaboration with him has been flawless. **He took his time and spent 3 days with me and my team in Mamaia, Romania where he was a guest for 3 sessions of my podcast Waves of AI**. He is one of the most competent people I know that has a real understanding of how AI works and how to integrate it quickly in your company."
-
--   :material-format-quote-open:{ .lg .middle } Barbara van den Bosch
-    
-    Founder at Viverve
-
-    ---
-
-    "Together with Datalumina, we developed a tailor-made program where I, as a school leader, can now bring together vast amounts of information in one place and automate key tasks. **Beyond the tremendous quality improvement for our organization, working with Datalumina was an extremely pleasant experience**."
-
--   :material-format-quote-open:{ .lg .middle } Rene Raaphorst
-    
-    Founder at Crypto Insiders
-
-    ---
-
-    "My experience with Datalumina has been excellent. **They think along with you every step of the way, from proof of concept to a fully functional product**. I was amazed by the quality of the results and found the collaboration very enjoyable. I highly recommend Dave and Datalumina to everyone!"
-
--   :material-format-quote-open:{ .lg .middle } Kelsen
-    
-    Founder at Datavisum
-
-    ---
-
-    "I am thankful for having come across Dave and Data Freelancer, it was one of the best investment decisions I've made in 2024. **From effective ways to create inbound marketing strategies using social media, through solution architecture design to address all kinds of business challenges**, you will extract a great deal of value from diverse perspectives."
-
-</div>
-
-## Frequently asked questions
-
-??? note "How quickly can you start working on my project?"
-    I can typically begin new projects within 1-2 weeks of contract signing. For urgent matters, I maintain some flexibility for rapid response situations and can potentially start sooner - just let me know your timeline during our initial consultation.
-
-??? note "Do you require a minimum project size or commitment?"
-    While I can accommodate projects of any size, I find that engagements of at least 20 hours allow for meaningful impact. This gives us enough time to understand your data, implement solutions, and deliver actionable results. We can start with a small pilot project to ensure we're a good fit.
-
-??? note "What industries do you have experience in?"
-    I've successfully delivered projects across e-commerce, manufacturing, healthcare, and financial services. While I specialize in data science fundamentals that apply across sectors, I particularly excel in projects involving customer behavior analysis, process optimization, and predictive modeling.
-
-??? note "How do you handle data security and confidentiality?"
-    I take data security extremely seriously. I sign comprehensive NDAs before starting any project, use enterprise-grade encryption for all data transfers, and follow industry best practices for data handling. I can also work within your existing security infrastructure and policies.
-
-??? note "What's your pricing structure?"
-    I offer both project-based and retainer pricing models. Project fees are based on scope, complexity, and value delivered rather than hours worked. For ongoing support, I offer flexible retainer packages. Let's discuss your specific needs during our consultation to determine the most cost-effective approach.
-
-??? note "How do you communicate progress and results?"
-    I maintain clear communication through weekly progress updates and regular check-in meetings. You'll receive detailed documentation of all analyses, findings, and recommendations. For ongoing projects, I provide interactive dashboards and reports that allow you to track progress and results in real-time.
-
-
-<div class="grid cards" style="margin-top: 3rem" markdown>
-
--   :material-coffee:{ .lg .middle } Let's have a virtual coffee together!
-
-    ---
-    
-    Want to see if we're a match? Let's have a chat and find out. Schedule a free 30-minute strategy session to discuss your AI challenges and explore how we can work together.
-
-    [Book Free Intro Call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
-
-</div>
+  <div class="pl-about">
+    <div class="pl-about__photo">
+      <img src="assets/obiogbuagu.jpeg" alt="Obi Ogbuagu, AI Engineer and founder of Plurobi">
+    </div>
+    <div class="pl-about__body">
+      <p class="pl-about__text">I&rsquo;m an AI Engineer specializing in data and AI automation solutions. I help SMEs replace manual reporting, scattered CSVs, and repetitive operational work with systems that run automatically. I work end-to-end, from data infrastructure to deployed AI workflows, so businesses can stop waiting for insights and start acting on them. Ready to automate the work slowing your team down?</p>
+      <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book a call <span class="pl-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>

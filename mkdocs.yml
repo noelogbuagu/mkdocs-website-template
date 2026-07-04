@@ -1,76 +1,70 @@
-site_name: Your Site Name
-site_description: Your site description
+site_name: Plurobi
+site_description: Data and AI automation for SMEs. Plurobi builds AI systems that remove manual reporting, scattered spreadsheets, and repetitive operations.
 site_url: https://yourdomain.com
 
 nav:
-  - Home:
-    - About: index.md
+  - Home: index.md
   - Case Studies:
     - Overview: portfolio/index.md
     - Projects:
       - portfolio/projects/project-1.md
       - portfolio/projects/project-2.md
   - Blog:
-    - blog/index.md 
+    - blog/index.md
 
 theme:
   name: material
+  # Custom templates live in overrides/ (see overrides/home.html for the landing page shell)
+  custom_dir: overrides
   features:
     - search.suggest
-    - toc.integrate
     - navigation.tabs
-    - navigation.expand
     - navigation.sections
-    - navigation.instant
-    - navigation.instant.prefetch
+    - navigation.top
     - content.tooltips
     - content.tabs.link
     - content.code.copy
     - navigation.footer
   language: en
+  # Single dark scheme to match the Plurobi brand board (black background, orange accent)
   palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
-      primary: custom
-      accent: custom  
-    - scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: custom
-      accent: custom
+    scheme: slate
+    primary: custom
+    accent: custom
   font:
-    text: Roboto
+    text: Open Sans
     code: Roboto Mono
-  icon:
-    logo: material/slash-forward-box
-  favicon: assets/favicon.png
+  logo: assets/plurobi-mark.png
+  favicon: assets/plurobi-mark.png
 
 extra:
   generator: true
   social:
-    - icon: fontawesome/solid/building
-      link: https://company.com
     - icon: fontawesome/brands/github
       link: https://github.com/
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com/
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:hello@plurobi.com
+  # Central place for call-to-action links used across the landing page
+  contact_url: https://calendly.com/obiogbuagu/free-ai-strategy-consultation
   analytics:
     # provider: google
-    # property: G-W9Y130NXVZ
+    # property: G-XXXXXXimport
 
 extra_css:
   - stylesheets/extra.css
   - stylesheets/hero.css
+
 plugins:
   - search
+  # Social cards need Cairo (imaging deps). Enabled automatically in CI where
+  # those libraries are present; disabled for local builds to avoid crashes.
   - social:
+      enabled: !ENV [CI, false]
       cards_layout_options:
-        background_color: "#111111"
+        background_color: "#000000"
+        color: "#ffffff"
   - blog:
       blog_dir: blog
       authors_file: "{blog}/.authors.yml"
@@ -95,11 +89,5 @@ markdown_extensions:
   - def_list
   - pymdownx.keys
 
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js
-
-extra_files:
-  - docs/robots.txt
-
 copyright: |
-  &copy; 2024 <a href="https://www.linkedin.com" target="_blank" rel="noopener">John Doe</a>. All rights reserved.
+  &copy; 2026 Plurobi. Data and AI automation for SMEs.
