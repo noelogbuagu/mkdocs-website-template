@@ -21,7 +21,9 @@ html {
 
 .pl-shell {
   color: var(--pl-gray);
-  font-family: var(--md-text-font, "Open Sans"), sans-serif;
+  font-family: var(--pl-font-family);
+  font-size: var(--pl-font-size-base);
+  line-height: var(--pl-line-height-body);
 }
 
 /* Shared anchor offset so sections aren't flush to the top edge */
@@ -37,7 +39,8 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
+  /* Figma: sidebar frame is W 462 x H 1106 (MacBook Pro 16" frame). */
+  width: 462px;
   height: 100vh;
   padding: 48px 40px;
   display: flex;
@@ -55,13 +58,25 @@ html {
   text-decoration: none;
 }
 .pl-brand__mark {
-  width: 30px;
+  /* Icon (light scheme) is square; the dark-scheme lockup is wider (icon +
+     baked-in wordmark), so height is fixed and width follows the asset's
+     own aspect ratio instead of being forced into a square box. */
   height: 30px;
+  width: auto;
   object-fit: contain;
+}
+.pl-brand__mark--light {
+  width: 30px;
+  display: none;
+}
+/* Dark scheme's lockup image already contains the "Plurobi" wordmark, so the
+   separate HTML name is only needed in light scheme (icon-only mark). */
+[data-md-color-scheme="slate"] .pl-brand__name {
+  display: none;
 }
 .pl-brand__name {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: var(--pl-font-weight-heading);
   color: var(--pl-white);
   letter-spacing: -0.01em;
 }
@@ -80,12 +95,21 @@ html {
 .pl-nav {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  /* Figma: 6-item nav list is H 332 Hug = 6 rows x 42px + 5 gaps x 16px. */
+  gap: 16px;
 }
 .pl-nav a {
+  display: block;
+  /* Figma: each row has 10px padding on all sides (part of the 42px row
+     height above), giving a larger, evenly-spaced click target. Horizontal
+     margin cancels the padding's left/right inset so text still lines up
+     with the logo/tagline above; vertical padding is kept to preserve the
+     42px row height that the 16px inter-row gap was measured against. */
+  padding: 10px;
+  margin: 0 -10px;
   color: var(--pl-gray);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: color 0.2s ease;
 }
 .pl-nav a:hover {
@@ -99,6 +123,20 @@ html {
   margin: 0 0 16px;
   font-size: 0.9rem;
   color: var(--pl-white);
+}
+/* Figma: bottom sidebar block (status / CTA button / stack line) is a 37px
+   gap stack. Reset the ad-hoc margins above/below so the flex gap is the
+   only source of spacing between the three items. */
+.pl-sidebar__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+}
+.pl-sidebar__bottom .pl-status {
+  margin-bottom: 0;
+}
+.pl-sidebar__bottom .pl-stack {
+  margin-top: 0;
 }
 .pl-dot {
   width: 8px;
@@ -122,16 +160,30 @@ html {
    Main content column
    ========================================================================= */
 .pl-main {
-  margin-left: 300px;
-  padding: 80px 64px 0;
-  max-width: 1160px;
+  /* Single source of truth for the content column's horizontal padding.
+     Section dividers and the footer bleed out by this amount so their
+     horizontal rules start at the sidebar's vertical line on the left
+     (see .pl-section / .pl-footer below). */
+  /* Internal gutter of the Figma content frame (its left/right padding).
+     ~40px read from the design; tune here if you have the exact value. */
+  --pl-main-pad-x: 40px;
+  /* Divider length: anchored to the sidebar line, stopping short of the
+     right edge to leave a little space, matching the design. Tune here.
+     Card/content right gutter is derived from this so cards always end a
+     little before the divider (see .pl-section). */
+  --pl-divider-width: 92%;
+  /* Figma: content frame starts flush with the sidebar's right edge (462px wide). */
+  margin-left: 462px;
+  padding: 15px var(--pl-main-pad-x) 0;
+  /* Figma content frame width. */
+  max-width: 1232px;
 }
 
 /* --- Shared section primitives ------------------------------------------- */
 .pl-eyebrow {
   margin: 0 0 18px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  font-size: var(--pl-font-size-eyebrow);
+  letter-spacing: var(--pl-letter-spacing-eyebrow);
   text-transform: uppercase;
   color: var(--pl-gray);
 }
@@ -141,7 +193,29 @@ html {
 }
 
 .pl-section {
-  padding: 64px 0;
+  /* Negative margins pull the box out to the sidebar line on the left; the
+     left padding keeps content aligned with the hero above it. The right
+     gutter is derived from --pl-divider-width so the content (cards) always
+     ends a little before the divider's right end, at any screen size.
+     The divider itself is drawn by the shared ::before rule below. */
+  position: relative;
+  margin: 0 calc(-1 * var(--pl-main-pad-x));
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: var(--pl-main-pad-x);
+  padding-right: calc(100% - var(--pl-divider-width) + var(--pl-main-pad-x));
+}
+
+/* Shared top divider for sections + footer: starts at the sidebar's vertical
+   line (left: 0, thanks to the negative left margin above) and spans
+   --pl-divider-width, leaving a little space before the right edge. */
+.pl-section::before,
+.pl-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--pl-divider-width);
   border-top: 1px solid var(--pl-line);
 }
 .pl-section__head {
@@ -151,15 +225,16 @@ html {
 .pl-section__title {
   margin: 0 0 14px;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: var(--pl-font-weight-heading);
   color: var(--pl-white);
   line-height: 1.2;
+  letter-spacing: var(--pl-letter-spacing-heading);
 }
 .pl-section__lead {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--pl-font-size-base);
   color: var(--pl-gray);
-  line-height: 1.6;
+  line-height: var(--pl-line-height-body);
 }
 
 .pl-accent {
@@ -175,8 +250,9 @@ html {
   gap: 8px;
   padding: 12px 22px;
   border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: var(--pl-font-family);
+  font-size: var(--pl-font-size-nav);
+  font-weight: var(--pl-font-weight-semibold);
   text-decoration: none;
   border: 1px solid transparent;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -184,7 +260,7 @@ html {
 }
 .pl-btn--primary {
   background-color: var(--pl-orange);
-  color: var(--pl-white);
+  color: var(--pl-on-accent);
 }
 .pl-btn--primary:hover {
   background-color: var(--pl-orange-hover);
@@ -211,40 +287,58 @@ html {
    ========================================================================= */
 .pl-hero {
   position: relative;
-  padding: 96px 0 88px;
-  min-height: 60vh;
+  padding: 10px 0 50px;
+  /* Figma hero frame: H 984, "Clip content" on, 45px spacing between the
+     stacked eyebrow / title / lead / actions (the child margins are zeroed
+     below so this gap governs). The ring is clipped to the hero box. */
+  min-height: 984px;
+  max-width: 1232px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 45px;
+  overflow: clip;
+}
+/* Let the hero's flex gap own the vertical rhythm (see spacing above). */
+.pl-hero > .pl-eyebrow {
+  margin-bottom: 0;
 }
 .pl-hero__ring {
   position: absolute;
   top: 50%;
-  right: -40px;
+  right: -300px;
   transform: translateY(-50%);
-  width: 460px;
-  max-width: 45%;
-  opacity: 0.9;
+  /* Matches the Figma hero image dimensions (1107 x 1107). */
+  width: 1000px;
+  height: 1000px;
+  /* Kept as a soft, transparent accent (not a solid graphic) in both schemes.
+     Dark mode needs a much lower value than light because the orange mark
+     reads far more strongly against black. */
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
+}
+
+[data-md-color-scheme="default"] .pl-hero__ring {
+  opacity: 0.12;
 }
 .pl-hero > *:not(.pl-hero__ring) {
   position: relative;
   z-index: 1;
 }
 .pl-hero__title {
-  margin: 0 0 22px;
+  margin: 0;
   font-size: 3.4rem;
-  font-weight: 700;
+  font-weight: var(--pl-font-weight-heading);
   line-height: 1.08;
   color: var(--pl-white);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--pl-letter-spacing-heading);
 }
 .pl-hero__lead {
   max-width: 520px;
-  margin: 0 0 34px;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  margin: 0;
+  font-size: var(--pl-font-size-lead);
+  line-height: var(--pl-line-height-body);
   color: var(--pl-gray);
 }
 .pl-hero__actions {
@@ -296,13 +390,13 @@ html {
 .pl-card__title {
   margin: 0 0 10px;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: var(--pl-font-weight-heading);
   color: var(--pl-white);
 }
 .pl-card__text {
   margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: var(--pl-font-size-sm);
+  line-height: var(--pl-line-height-body);
   color: var(--pl-gray);
 }
 
@@ -476,13 +570,39 @@ html {
 }
 
 /* =========================================================================
+   07. Closing CTA banner
+   ========================================================================= */
+.pl-cta__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.pl-cta__title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: var(--pl-font-weight-heading);
+  color: var(--pl-white);
+  line-height: 1.2;
+  letter-spacing: var(--pl-letter-spacing-heading);
+}
+.pl-cta__lead {
+  margin: 0;
+  font-size: var(--pl-font-size-base);
+  color: var(--pl-gray);
+  line-height: var(--pl-line-height-body);
+}
+
+/* =========================================================================
    Footer
    ========================================================================= */
 .pl-footer {
-  margin-left: -64px;
-  margin-right: -64px;
-  padding: 32px 64px;
-  border-top: 1px solid var(--pl-line);
+  position: relative;
+  margin: 0 calc(-1 * var(--pl-main-pad-x));
+  padding: 32px var(--pl-main-pad-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -490,8 +610,11 @@ html {
   gap: 16px;
 }
 .pl-brand--sm .pl-brand__mark {
-  width: 24px;
   height: 24px;
+  width: auto;
+}
+.pl-brand--sm .pl-brand__mark--light {
+  width: 24px;
 }
 .pl-brand--sm .pl-brand__name {
   font-size: 1.1rem;
@@ -508,33 +631,57 @@ html {
 /* =========================================================================
    Responsive
    ========================================================================= */
+
+/* Wide screens: the landing page uses its own fixed sidebar, so Material's
+   header bar and primary nav sidebar are redundant here and hidden. Below this
+   width (see the max-width: 900px block) the custom sidebar is hidden instead
+   and the header collapses into the standard burger menu, matching inner pages. */
+@media screen and (min-width: 901px) {
+  body:has(.pl-shell) .md-header,
+  body:has(.pl-shell) .md-sidebar--primary {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .pl-cards--3 {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+/* Burger drawer that mirrors the landing page's fixed sidebar (mobile only).
+   Material gives `.md-nav__list` `flex-grow: 1`, which would push the CTA below
+   the viewport; pin the list to its natural height so the status + CTA sit
+   directly under the section links, and let the whole drawer scroll if needed. */
+.pl-drawer {
+  overflow-y: auto;
+}
+.pl-drawer .md-nav__list {
+  flex: 0 0 auto;
+}
+
+/* Availability status + CTA shown beneath the section links in the drawer.
+   Mirrors the landing page's fixed sidebar so nothing is lost when collapsed. */
+.pl-drawer__cta {
+  padding: 24px 0.6rem 0;
+  margin-top: 8px;
+  border-top: 1px solid var(--pl-line);
+}
+
 @media screen and (max-width: 900px) {
+  /* Hide the custom fixed sidebar; Material's header + burger drawer take over,
+     so the hero is the first thing shown below the collapsed header bar. */
   .pl-sidebar {
-    position: static;
-    width: auto;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--pl-line);
-    padding: 28px 24px;
-  }
-  .pl-sidebar__bottom {
-    margin-top: 28px;
-  }
-  .pl-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 14px 22px;
+    display: none;
   }
   .pl-main {
+    /* Narrower gutter on mobile; sections + footer bleed to this value.
+       Full-width dividers here (single column), which also makes the derived
+       section right gutter resolve back to a symmetric --pl-main-pad-x. */
+    --pl-main-pad-x: 24px;
+    --pl-divider-width: 100%;
     margin-left: 0;
-    padding: 40px 24px 0;
-    max-width: none;
+    padding: 40px var(--pl-main-pad-x) 0;
   }
   .pl-hero {
     min-height: auto;
@@ -547,6 +694,7 @@ html {
     opacity: 0.25;
     right: -60px;
     width: 340px;
+    height: 340px;
   }
   .pl-cards--3,
   .pl-cards--2 {
@@ -560,9 +708,7 @@ html {
     justify-items: start;
   }
   .pl-footer {
-    margin-left: -24px;
-    margin-right: -24px;
-    padding: 28px 24px;
+    padding: 28px var(--pl-main-pad-x);
   }
 }
 

@@ -22,15 +22,32 @@ hide:
   <h1 class="pl-hero__title">I build AI systems that<br><span class="pl-accent">remove manual work</span></h1>
   <p class="pl-hero__lead">I help SMEs replace manual reporting, scattered spreadsheets, and repetitive operations with automated data pipelines, AI workflows, and real-time insights.</p>
   <div class="pl-hero__actions">
-    <a class="pl-btn pl-btn--primary" href="#projects">View works <span class="pl-arrow">&rarr;</span></a>
-    <a class="pl-btn pl-btn--ghost" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book a Call</a>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Schedule free call <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--ghost" href="#projects">View projects</a>
   </div>
 </section>
 
-<!-- ===================== 02. SERVICES ===================== -->
+<!-- ===================== 02. ABOUT ===================== -->
+<section class="pl-section" id="about">
+  <header class="pl-section__head">
+    <p class="pl-eyebrow">02. ABOUT</p>
+    <h2 class="pl-section__title">Hey, I&rsquo;m Obi,</h2>
+  </header>
+
+  <div class="pl-about">
+    <div class="pl-about__photo">
+      <img src="assets/obiogbuagu.jpeg" alt="Obi Ogbuagu, AI Engineer and founder of Plurobi">
+    </div>
+    <div class="pl-about__body">
+      <p class="pl-about__text">I&rsquo;m an AI Engineer specializing in data and AI automation solutions. I help SMEs replace manual reporting, scattered CSVs, and repetitive operational work with systems that run automatically. I work end-to-end, from data infrastructure to deployed AI workflows, so businesses can stop waiting for insights and start acting on them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03. SERVICES ===================== -->
 <section class="pl-section" id="services">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">02. SERVICES</p>
+    <p class="pl-eyebrow">03. SERVICES</p>
     <h2 class="pl-section__title">What I help automate</h2>
     <p class="pl-section__lead">Every engagement ends with a system that runs itself, not a report you have to maintain.</p>
   </header>
@@ -62,10 +79,10 @@ hide:
   </div>
 </section>
 
-<!-- ===================== 03. IMPACT ===================== -->
+<!-- ===================== 04. IMPACT ===================== -->
 <section class="pl-section" id="impact">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">03. IMPACT</p>
+    <p class="pl-eyebrow">04. IMPACT</p>
     <h2 class="pl-section__title">Real results from operational systems</h2>
     <p class="pl-section__lead">Not demo projects. Production systems running inside live businesses.</p>
   </header>
@@ -94,10 +111,10 @@ hide:
   </div>
 </section>
 
-<!-- ===================== 04. PROJECTS ===================== -->
+<!-- ===================== 05. PROJECTS ===================== -->
 <section class="pl-section" id="projects">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">04. PROJECTS</p>
+    <p class="pl-eyebrow">05. PROJECTS</p>
     <h2 class="pl-section__title">Selected works</h2>
     <p class="pl-section__lead">Each project replaced a manual process with a system that just runs.</p>
   </header>
@@ -132,10 +149,10 @@ hide:
   </div>
 </section>
 
-<!-- ===================== 05. PROCESS ===================== -->
+<!-- ===================== 06. PROCESS ===================== -->
 <section class="pl-section" id="process">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">05. PROCESS</p>
+    <p class="pl-eyebrow">06. PROCESS</p>
     <h2 class="pl-section__title">How I operate</h2>
     <p class="pl-section__lead">Tools and method I use to build production-ready systems.</p>
   </header>
@@ -176,20 +193,11 @@ hide:
   </ol>
 </section>
 
-<!-- ===================== 06. ABOUT ===================== -->
-<section class="pl-section" id="about">
-  <header class="pl-section__head">
-    <p class="pl-eyebrow">06. ABOUT</p>
-    <h2 class="pl-section__title">Hey, I&rsquo;m Obi,</h2>
-  </header>
-
-  <div class="pl-about">
-    <div class="pl-about__photo">
-      <img src="assets/obiogbuagu.jpeg" alt="Obi Ogbuagu, AI Engineer and founder of Plurobi">
-    </div>
-    <div class="pl-about__body">
-      <p class="pl-about__text">I&rsquo;m an AI Engineer specializing in data and AI automation solutions. I help SMEs replace manual reporting, scattered CSVs, and repetitive operational work with systems that run automatically. I work end-to-end, from data infrastructure to deployed AI workflows, so businesses can stop waiting for insights and start acting on them. Ready to automate the work slowing your team down?</p>
-      <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book a call <span class="pl-arrow">&rarr;</span></a>
-    </div>
+<!-- ===================== 07. CTA ===================== -->
+<section class="pl-section pl-cta" id="get-started">
+  <div class="pl-cta__inner">
+    <h2 class="pl-cta__title">Ready to automate the work slowing your team down?</h2>
+    <p class="pl-cta__lead">Let&rsquo;s talk about where manual work is costing you the most, and how to remove it.</p>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Schedule free call <span class="pl-arrow">&rarr;</span></a>
   </div>
 </section>

@@ -1,0 +1,20 @@
+{#-
+  Static HTML twin of includes/cta-book-call.md.
+
+  Why it's duplicated: the blog listing template (overrides/blog.html) needs
+  the CTA to render *after* the auto-generated post list, which only a Jinja
+  template override can do. Jinja has no markdown filter available here, so
+  it can't reuse the markdown snippet directly — this is the same card,
+  pre-rendered to the HTML python-markdown would otherwise produce.
+  Keep this in sync with includes/cta-book-call.md if the offer/link changes.
+-#}
+<div class="grid cards" style="margin-top: 3rem">
+  <ul>
+    <li>
+      <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> Let's have a virtual coffee together!</p>
+      <hr>
+      <p>Want to see if we're a match? Let's have a chat and find out. Schedule a free 30-minute strategy session to discuss your AI challenges and explore how we can work together.</p>
+      <p><a class="md-button md-button--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book Free Intro Call <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
+    </li>
+  </ul>
+</div>

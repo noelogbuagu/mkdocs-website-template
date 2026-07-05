@@ -72,14 +72,4 @@ To tackle this challenge, we developed a custom-built AI solution similar to a "
 - Specialization in retrieval-augmented generation
 - Focus on OpenAI model integration
 
-<div class="grid cards" style="margin-top: 3rem" markdown>
-
--   :material-coffee:{ .lg .middle } Let's have a virtual coffee together!
-
-    ---
-    
-    Want to see if we're a match? Let's have a chat and find out. Schedule a free 30-minute strategy session to discuss your AI challenges and explore how we can work together.
-
-    [Book Free Intro Call :material-arrow-top-right:](https://calendly.com/obiogbuagu/free-ai-strategy-consultation){ .md-button .md-button--primary }
-
-</div>
+--8<-- "cta-book-call.md"

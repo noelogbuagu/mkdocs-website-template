@@ -1,0 +1,11 @@
+{#-
+  Swap logo mark for light vs dark mode.
+  Orange mark on dark backgrounds; black mark on light backgrounds.
+-#}
+{% if config.theme.logo %}
+  <img class="md-logo__mark md-logo__mark--dark" src="{{ config.theme.logo | url }}" alt="logo">
+  <img class="md-logo__mark md-logo__mark--light" src="{{ 'assets/plurobi-mark-black.png' | url }}" alt="logo">
+{% else %}
+  {% set icon = config.theme.icon.logo or "material/library" %}
+  {% include ".icons/" ~ icon ~ ".svg" %}
+{% endif %}

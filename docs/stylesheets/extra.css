@@ -1,79 +1,221 @@
 /* =========================================================================
    Plurobi brand theme — global tokens and Material overrides
    Applies to every page (landing, blog, case studies).
-   Palette source: Figma brand board + design tokens.
+   Supports light/dark toggle via Material palette.
    ========================================================================= */
 
 :root {
-  --pl-orange: #ff5d00;        /* accent / primary action  */
-  --pl-orange-hover: #e85002;  /* hover state              */
-  --pl-black: #000000;         /* page background          */
-  --pl-white: #ffffff;         /* headings / strong text   */
-  --pl-gray: #a7a7a7;          /* body text                */
-  --pl-line: #333333;          /* hairline dividers        */
-  --pl-green: #22c55e;         /* metrics / status dot     */
-  --pl-card: #0e0e0e;          /* card surface             */
-  --pl-card-border: rgba(255, 255, 255, 0.08);
+  /* Brand accents (constant across schemes) */
+  --pl-orange: #ff5d00;
+  --pl-orange-hover: #e85002;
+  --pl-green: #22c55e;
+  --pl-on-accent: #ffffff;
   --pl-radius: 12px;
+
+  /* Centred page column — aligned with rulebase.co / piggyvest.com-style marketing sites */
+  --pl-content-max: 1200px;
+  --pl-content-gutter: clamp(20px, 4vw, 48px);
+
+  /* Shared typography */
+  --pl-font-family: var(--md-text-font, "Open Sans"), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --pl-font-size-base: 1rem;
+  --pl-font-size-sm: 0.92rem;
+  --pl-font-size-lead: 1.05rem;
+  --pl-font-size-nav: 0.95rem;
+  --pl-font-size-eyebrow: 0.8rem;
+  --pl-line-height-body: 1.6;
+  --pl-font-weight-regular: 400;
+  --pl-font-weight-semibold: 600;
+  --pl-font-weight-heading: 700;
+  --pl-letter-spacing-heading: -0.02em;
+  --pl-letter-spacing-eyebrow: 0.08em;
 }
 
-/* Map the Material "custom" primary/accent onto the Plurobi palette and
-   force a true-black dark scheme to match the brand board. */
+/* -------------------------------------------------------------------------
+   Dark mode (slate)
+   ------------------------------------------------------------------------- */
 [data-md-color-scheme="slate"] {
+  --pl-black: #000000;
+  --pl-white: #ffffff;
+  --pl-gray: #a7a7a7;
+  --pl-line: #333333;
+  --pl-card: #0e0e0e;
+  --pl-card-border: rgba(255, 255, 255, 0.08);
+  --pl-header-bg: #050505;
+  --pl-footer-bg: #000000;
+
   --md-default-bg-color: var(--pl-black);
   --md-default-fg-color: var(--pl-gray);
   --md-default-fg-color--light: var(--pl-gray);
   --md-default-fg-color--lighter: rgba(167, 167, 167, 0.5);
-
   --md-primary-fg-color: #050505;
   --md-primary-fg-color--light: #1a1a1a;
   --md-primary-fg-color--dark: #000000;
-
   --md-accent-fg-color: var(--pl-orange);
   --md-accent-fg-color--transparent: rgba(255, 93, 0, 0.1);
   --md-typeset-a-color: var(--pl-orange);
-
-  --md-footer-bg-color: #050505;
+  --md-footer-bg-color: var(--pl-footer-bg);
   --md-footer-bg-color--dark: #000000;
-
   --md-code-bg-color: #0e0e0e;
 }
 
-/* Headings render in white for contrast on the black background */
-[data-md-color-scheme="slate"] .md-typeset h1,
-[data-md-color-scheme="slate"] .md-typeset h2,
-[data-md-color-scheme="slate"] .md-typeset h3,
-[data-md-color-scheme="slate"] .md-typeset h4 {
-  color: var(--pl-white);
+/* -------------------------------------------------------------------------
+   Light mode (default)
+   ------------------------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  --pl-black: #ffffff;
+  --pl-white: #111111;
+  --pl-gray: #5a5a5a;
+  --pl-line: #e0e0e0;
+  --pl-card: #f5f5f5;
+  --pl-card-border: rgba(0, 0, 0, 0.08);
+  --pl-header-bg: #ffffff;
+  --pl-footer-bg: #fafafa;
+
+  --md-default-bg-color: var(--pl-black);
+  --md-default-fg-color: var(--pl-gray);
+  --md-default-fg-color--light: var(--pl-gray);
+  --md-default-fg-color--lighter: rgba(90, 90, 90, 0.5);
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #f5f5f5;
+  --md-primary-fg-color--dark: #eeeeee;
+  --md-accent-fg-color: var(--pl-orange);
+  --md-accent-fg-color--transparent: rgba(255, 93, 0, 0.12);
+  --md-typeset-a-color: var(--pl-orange);
+  --md-footer-bg-color: var(--pl-footer-bg);
+  --md-footer-bg-color--dark: #f0f0f0;
+  --md-code-bg-color: #f0f0f0;
+}
+
+/* Logo marks — swap by color scheme.
+   `!important` is required: Material's `.md-nav__title .md-nav__button.md-logo img`
+   and `.md-header__button.md-logo img` rules set `display: block` at a higher
+   specificity, which would otherwise force BOTH the dark and light marks to
+   render (the stacked "double logo" seen in the mobile nav drawer). */
+.md-logo__mark--light,
+.pl-brand__mark--light {
+  display: none !important;
+}
+
+[data-md-color-scheme="default"] .md-logo__mark--dark,
+[data-md-color-scheme="default"] .pl-brand__mark--dark {
+  display: none !important;
+}
+
+[data-md-color-scheme="default"] .md-logo__mark--light,
+[data-md-color-scheme="default"] .pl-brand__mark--light {
+  display: inline-block !important;
 }
 
 /* -------------------------------------------------------------------------
-   Buttons (used on blog / case-study pages via {.md-button})
+   Typography — shared across schemes
    ------------------------------------------------------------------------- */
-[data-md-color-scheme="slate"] .md-button--primary,
-[data-md-color-scheme="slate"] .md-button {
+body,
+.md-typeset {
+  font-family: var(--pl-font-family);
+  font-size: var(--pl-font-size-base);
+  line-height: var(--pl-line-height-body);
+  color: var(--pl-gray);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--pl-white);
+  font-weight: var(--pl-font-weight-heading);
+}
+
+.md-typeset h1 {
+  letter-spacing: var(--pl-letter-spacing-heading);
+  line-height: 1.2;
+}
+
+.md-typeset strong,
+.md-typeset b {
+  color: var(--pl-white);
+  font-weight: var(--pl-font-weight-heading);
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child,
+.md-typeset .grid.cards > ul > li > :first-child {
+  font-weight: var(--pl-font-weight-heading);
+  color: var(--pl-white);
+}
+
+.md-typeset .grid.cards > ul > li > p:not(:first-child) {
+  font-size: var(--pl-font-size-sm);
+}
+
+.md-post .md-post__header h1,
+.md-post .md-post__header h2,
+.md-post .md-post__content h2 {
+  font-weight: var(--pl-font-weight-heading);
+  color: var(--pl-white);
+}
+
+.md-meta,
+.md-post__meta {
+  font-family: var(--pl-font-family);
+  font-size: var(--pl-font-size-eyebrow);
+  letter-spacing: var(--pl-letter-spacing-eyebrow);
+  text-transform: uppercase;
+  color: var(--pl-gray);
+}
+
+.md-header__title,
+.md-nav__link,
+.md-tabs__link,
+.md-footer-copyright,
+.md-search__input {
+  font-family: var(--pl-font-family);
+}
+
+.md-nav__link {
+  font-size: var(--pl-font-size-nav);
+}
+
+.md-tabs__link {
+  font-size: var(--pl-font-size-nav);
+  font-weight: var(--pl-font-weight-regular);
+}
+
+.md-header__title {
+  font-weight: var(--pl-font-weight-heading);
+}
+
+/* -------------------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------------------- */
+.md-button--primary,
+.md-button {
   background-color: var(--pl-orange);
   border-color: var(--pl-orange);
-  color: var(--pl-white);
+  color: var(--pl-on-accent);
+  font-family: var(--pl-font-family);
+  font-size: var(--pl-font-size-nav);
+  font-weight: var(--pl-font-weight-semibold);
 }
 
-[data-md-color-scheme="slate"] .md-button:hover,
-[data-md-color-scheme="slate"] .md-button--primary:hover {
+.md-button:hover,
+.md-button--primary:hover {
   background-color: var(--pl-orange-hover);
   border-color: var(--pl-orange-hover);
-  color: var(--pl-white);
+  color: var(--pl-on-accent);
 }
 
 /* -------------------------------------------------------------------------
-   Header / tabs on inner pages
+   Header / tabs / footer on inner pages
    ------------------------------------------------------------------------- */
 .md-header {
-  background-color: #050505;
+  background-color: var(--pl-header-bg);
   border-bottom: 1px solid var(--pl-line);
 }
 
 .md-tabs {
-  background-color: #050505;
+  background-color: var(--pl-header-bg);
 }
 
 .md-header__title,
@@ -85,21 +227,67 @@
   color: var(--pl-orange);
 }
 
-/* Footer meta bar */
 .md-footer-meta {
-  background-color: #000000;
+  background-color: var(--pl-footer-bg);
+}
+
+/* Palette toggle icon colour on the header */
+.md-header__button {
+  color: var(--pl-white);
 }
 
 /* -------------------------------------------------------------------------
-   Grid cards (case-studies / blog) themed to match the dark surface
+   Grid cards
    ------------------------------------------------------------------------- */
-[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
-[data-md-color-scheme="slate"] .md-typeset .grid.cards > :not(ul) {
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > :not(ul) {
   background-color: var(--pl-card);
   border: 1px solid var(--pl-card-border);
   border-radius: var(--pl-radius);
 }
 
-[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover {
+.md-typeset .grid.cards > ul > li:hover {
   border-color: var(--pl-orange);
+}
+
+/* -------------------------------------------------------------------------
+   Landing page theme toggle (header is hidden on the home template)
+   ------------------------------------------------------------------------- */
+.pl-theme-toggle {
+  margin-top: 28px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid var(--pl-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--pl-gray);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.pl-theme-toggle:hover {
+  color: var(--pl-white);
+  border-color: var(--pl-orange);
+}
+
+.pl-theme-toggle__icon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.pl-theme-toggle__icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* Dark mode shows the sun (switch to light); light mode shows the moon */
+[data-md-color-scheme="slate"] .pl-theme-toggle__icon--dark {
+  display: inline-flex;
+}
+
+[data-md-color-scheme="default"] .pl-theme-toggle__icon--light {
+  display: inline-flex;
 }

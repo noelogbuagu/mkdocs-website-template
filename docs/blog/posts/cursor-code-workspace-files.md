@@ -38,3 +38,5 @@ Here's how to make Cursor the default application for `.code-workspace` files:
  
  1. This is where you need to change the setting to "All Applications".
     ![Enable All Applications](images/CleanShot%202024-09-15%20at%2012.03.17@2x.png)
+
+--8<-- "cta-book-call.md"

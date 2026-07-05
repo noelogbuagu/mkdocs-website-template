@@ -157,3 +157,5 @@ To get the most out of uv, I recommend:
 3. Using `uv sync` instead of `pip install` to ensure consistent environments
 
 Uv is actively maintained by the team behind Ruff (another amazing Python tool), and it's quickly becoming the go-to package manager in the Python ecosystem. You can find more resources and documentation [here](https://docs.astral.sh/uv/).
+
+--8<-- "cta-book-call.md"

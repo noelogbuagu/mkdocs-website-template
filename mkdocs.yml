@@ -4,13 +4,8 @@ site_url: https://yourdomain.com
 
 nav:
   - Home: index.md
-  - Case Studies:
-    - Overview: portfolio/index.md
-    - Projects:
-      - portfolio/projects/project-1.md
-      - portfolio/projects/project-2.md
-  - Blog:
-    - blog/index.md
+  - Projects: portfolio/index.md
+  - Blog: blog/index.md
 
 theme:
   name: material
@@ -19,18 +14,28 @@ theme:
   features:
     - search.suggest
     - navigation.tabs
-    - navigation.sections
+    - navigation.tabs.sticky
     - navigation.top
     - content.tooltips
     - content.tabs.link
     - content.code.copy
     - navigation.footer
   language: en
-  # Single dark scheme to match the Plurobi brand board (black background, orange accent)
   palette:
-    scheme: slate
-    primary: custom
-    accent: custom
+    # Dark mode (default — matches the Plurobi brand board)
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    # Light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
   font:
     text: Open Sans
     code: Roboto Mono
@@ -79,7 +84,11 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      # Lets pages pull in shared content (e.g. the CTA card) with
+      # --8<-- "filename.md" instead of duplicating it on every page.
+      # Path is outside docs/ so MkDocs doesn't also build these as pages.
+      base_path: [includes]
   - pymdownx.superfences
   - pymdownx.details
   - pymdownx.critic

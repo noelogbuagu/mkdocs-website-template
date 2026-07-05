@@ -22,3 +22,5 @@ Welcome to my portfolio of data science and AI projects. Each project demonstrat
     A private ChatGPT-like tool for the Company Y that revolutionizes mobility data analysis by combining structured SQL data with unstructured policy documents. Built with OpenAI and modern cloud architecture for comprehensive public sector policy evaluation.
 
 </div>
+
+--8<-- "cta-book-call.md"

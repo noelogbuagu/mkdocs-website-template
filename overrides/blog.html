@@ -1,0 +1,30 @@
+{#-
+  Blog listing pages (index, categories, archive).
+
+  Mirrors Material's own blog.html (theme template) exactly, adding one
+  thing: the shared CTA card rendered after the post list/pagination, which
+  plain markdown content can't reach since it's inserted before the
+  auto-generated list (see overrides/partials/blog-cta.html for why it's a
+  separate HTML partial rather than the docs/*.md snippet).
+-#}
+{% extends "main.html" %}
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        {{ page.content }}
+      </header>
+      {% for post in posts %}
+        {% include "partials/post.html" %}
+      {% endfor %}
+      {% if pagination %}
+        {% block pagination %}
+          {% include "partials/pagination.html" %}
+        {% endblock %}
+      {% endif %}
+      <div class="md-typeset">
+        {% include "partials/blog-cta.html" %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
