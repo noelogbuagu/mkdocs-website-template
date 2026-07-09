@@ -32,8 +32,8 @@ hide:
   <!-- Text-left / photo-right layout sized like a full intro block, not a small bio strip. -->
   <div class="pl-about">
     <div class="pl-about__body">
-      <h2 class="pl-about__title">Hi, I&rsquo;m <span class="pl-accent">Obi</span>, I love learning and building efficient systems that <span class="pl-accent">replace manual work</span></h2>
-      <p class="pl-about__lead">I have been doing this for the last 5 years</p>
+      <h2 class="pl-about__title">Hi, I&rsquo;m <span class="pl-accent">Obi</span>, I build efficient systems that <span class="pl-accent">replace manual work</span></h2>
+      <p class="pl-about__lead">I learned this by shipping it for real, inside a regulated data environment, not from a course.</p>
       <ul class="pl-about__list">
         <li>Still exporting CSVs by hand every morning before anyone can make a decision?</li>
         <li>Waiting a day for numbers that should take five minutes?</li>
@@ -52,7 +52,7 @@ hide:
 <!-- ===================== 03. SERVICES ===================== -->
 <section class="pl-section" id="services">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">03. SERVICES</p>
+    <!-- <p class="pl-eyebrow">03. SERVICES</p> -->
     <h2 class="pl-section__title">What I help automate</h2>
     <p class="pl-section__lead">Every engagement ends with a system that runs itself, not a report you have to maintain.</p>
   </header>
@@ -63,7 +63,7 @@ hide:
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="18" y1="20" x2="18" y2="4"/></svg>
       </span>
       <h3 class="pl-card__title">Automated Reporting</h3>
-      <p class="pl-card__text">Replace manual CSV exports and spreadsheet updates with reporting systems that run themselves.</p>
+      <p class="pl-card__text">Replace manual CSV exports and spreadsheet updates with reporting that runs itself.</p>
     </article>
     <article class="pl-card">
       <span class="pl-card__icon">
@@ -77,7 +77,7 @@ hide:
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
       </span>
       <h3 class="pl-card__title">Data Pipeline</h3>
-      <p class="pl-card__text">Connect your tools, clean your data, and create one reliable source of truth.</p>
+      <p class="pl-card__text">Connect every tool into one place, so you always know what's happening, not just what happened.</p>
     </article>
   </div>
 </section>

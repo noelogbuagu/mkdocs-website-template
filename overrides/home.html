@@ -92,6 +92,119 @@
           <a href="#process">06. Process</a>
           <a href="{{ 'blog/' | url }}">07. Blog</a>
         </nav>
+        {#- Highlight the in-page section currently in view (Figma selected state).
+           Deferred until DOMContentLoaded so section targets in .pl-main exist. -#}
+        <script>
+          (function () {
+            function initNavActive() {
+              var nav = document.querySelector(".pl-sidebar .pl-nav");
+              if (!nav) return;
+              var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+              if (!links.length) return;
+
+              var sections = links
+                .map(function (link) {
+                  var id = link.getAttribute("href").slice(1);
+                  var el = document.getElementById(id);
+                  return el ? { link: link, el: el } : null;
+                })
+                .filter(Boolean);
+
+              var lockedLink = null;
+              var unlockTimer = null;
+
+              function setActive(activeLink) {
+                if (!activeLink) return;
+                links.forEach(function (link) {
+                  var on = link === activeLink;
+                  link.classList.toggle("is-active", on);
+                  if (on) link.setAttribute("aria-current", "true");
+                  else link.removeAttribute("aria-current");
+                });
+              }
+
+              function sectionTop(el) {
+                return el.getBoundingClientRect().top + window.pageYOffset;
+              }
+
+              function activeFromScroll() {
+                var marker = window.pageYOffset + Math.min(180, window.innerHeight * 0.3);
+                var current = sections[0] && sections[0].link;
+                for (var i = 0; i < sections.length; i++) {
+                  if (sectionTop(sections[i].el) <= marker) current = sections[i].link;
+                }
+                return current;
+              }
+
+              function syncFromScroll() {
+                // Re-assert while locked so nothing can clear the orange mid-scroll.
+                if (lockedLink) {
+                  setActive(lockedLink);
+                  return;
+                }
+                setActive(activeFromScroll());
+              }
+
+              function unlock() {
+                clearTimeout(unlockTimer);
+                unlockTimer = null;
+                if (lockedLink) setActive(lockedLink);
+                lockedLink = null;
+              }
+
+              links.forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                  var id = link.getAttribute("href").slice(1);
+                  var target = document.getElementById(id);
+                  // Own the navigation so active state and scroll stay in sync.
+                  event.preventDefault();
+                  lockedLink = link;
+                  setActive(link);
+                  if (history.pushState) {
+                    history.pushState(null, "", "#" + id);
+                  } else {
+                    location.hash = id;
+                  }
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                  clearTimeout(unlockTimer);
+                  if ("onscrollend" in window) {
+                    window.addEventListener("scrollend", unlock, { once: true });
+                  }
+                  unlockTimer = setTimeout(unlock, 1200);
+                });
+              });
+
+              window.addEventListener("scroll", syncFromScroll, { passive: true });
+              window.addEventListener("hashchange", function () {
+                if (lockedLink) return;
+                var match = links.find(function (link) {
+                  return link.getAttribute("href") === location.hash;
+                });
+                if (match) setActive(match);
+                else syncFromScroll();
+              });
+
+              // Initial state from hash or scroll position.
+              if (location.hash) {
+                var initial = links.find(function (link) {
+                  return link.getAttribute("href") === location.hash;
+                });
+                if (initial) setActive(initial);
+                else syncFromScroll();
+              } else {
+                syncFromScroll();
+              }
+            }
+
+            if (document.readyState === "loading") {
+              document.addEventListener("DOMContentLoaded", initNavActive);
+            } else {
+              initNavActive();
+            }
+          })();
+        </script>
 
         {#- Self-contained light/dark toggle. Material's radio/label palette
            mechanism is unreliable outside its native header, so the landing
