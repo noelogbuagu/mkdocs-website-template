@@ -1,5 +1,5 @@
 ---
-title: Plurobi — Data & AI Automation for SMEs
+title: Data & AI Automation for SMEs
 description: Plurobi builds AI systems that remove manual work. We help SMEs replace manual reporting, scattered spreadsheets, and repetitive operations with automated data pipelines, AI workflows, and real-time insights.
 template: home.html
 hide:
@@ -11,35 +11,40 @@ hide:
   Plurobi landing page content.
   Authored as plain HTML so the layout matches the Figma design exactly.
   The fixed sidebar and footer live in overrides/home.html.
-  Replace the About photo
-  (assets/obi.jpg) with your real details.
 -->
 
 <!-- ===================== 01. HERO ===================== -->
 <section class="pl-hero" id="home">
   <img class="pl-hero__ring" src="assets/plurobi-mark.png" alt="" aria-hidden="true">
-  <p class="pl-eyebrow">AI ENGINEER <span class="pl-eyebrow__dot">&bull;</span> DATA AUTOMATION</p>
-  <h1 class="pl-hero__title">I build AI systems that<br><span class="pl-accent">remove manual work</span></h1>
-  <p class="pl-hero__lead">I help SMEs replace manual reporting, scattered spreadsheets, and repetitive operations with automated data pipelines, AI workflows, and real-time insights.</p>
+  <!-- <p class="pl-eyebrow">AI ENGINEER <span class="pl-eyebrow__dot">&bull;</span> DATA AUTOMATION</p> -->
+  <h1 class="pl-hero__title">From manual flows<br><span class="pl-accent">to systems that</span><br><span class="pl-accent">run themselves.</span></h1>
+  <p class="pl-hero__lead">I build end-to-end data and AI systems for SMEs, turning messy spreadsheets and data into automated pipelines and real-time insight.</p>
   <div class="pl-hero__actions">
-    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Schedule free call <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book free call <span class="pl-arrow">&rarr;</span></a>
     <a class="pl-btn pl-btn--ghost" href="#projects">View projects</a>
   </div>
 </section>
 
 <!-- ===================== 02. ABOUT ===================== -->
 <section class="pl-section" id="about">
-  <header class="pl-section__head">
-    <p class="pl-eyebrow">02. ABOUT</p>
-    <h2 class="pl-section__title">Hey, I&rsquo;m Obi,</h2>
-  </header>
+  <!-- <p class="pl-eyebrow">02. ABOUT</p> -->
 
+  <!-- Text-left / photo-right layout sized like a full intro block, not a small bio strip. -->
   <div class="pl-about">
+    <div class="pl-about__body">
+      <h2 class="pl-about__title">Hi, I&rsquo;m <span class="pl-accent">Obi</span>, I love learning and building efficient systems that <span class="pl-accent">replace manual work</span></h2>
+      <p class="pl-about__lead">I have been doing this for the last 5 years</p>
+      <ul class="pl-about__list">
+        <li>Still exporting CSVs by hand every morning before anyone can make a decision?</li>
+        <li>Waiting a day for numbers that should take five minutes?</li>
+        <li>Got three tools that don&rsquo;t talk to each other, and someone stitching them together manually?</li>
+        <li>Know there&rsquo;s a smarter way to run this but no one on the team has time to build it?</li>
+        <li>Tired of &ldquo;AI&rdquo; pitches that are all deck and no delivery?</li>
+      </ul>
+      <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Let&rsquo;s fix that <span class="pl-arrow">&rarr;</span></a>
+    </div>
     <div class="pl-about__photo">
       <img src="assets/obiogbuagu.jpeg" alt="Obi Ogbuagu, AI Engineer and founder of Plurobi">
-    </div>
-    <div class="pl-about__body">
-      <p class="pl-about__text">I&rsquo;m an AI Engineer specializing in data and AI automation solutions. I help SMEs replace manual reporting, scattered CSVs, and repetitive operational work with systems that run automatically. I work end-to-end, from data infrastructure to deployed AI workflows, so businesses can stop waiting for insights and start acting on them.</p>
     </div>
   </div>
 </section>
@@ -60,7 +65,6 @@ hide:
       <h3 class="pl-card__title">Automated Reporting</h3>
       <p class="pl-card__text">Replace manual CSV exports and spreadsheet updates with reporting systems that run themselves.</p>
     </article>
-
     <article class="pl-card">
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -68,7 +72,6 @@ hide:
       <h3 class="pl-card__title">AI Workflows</h3>
       <p class="pl-card__text">Classify, flag, route, and summarise work automatically so teams can act faster.</p>
     </article>
-
     <article class="pl-card">
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
@@ -198,6 +201,6 @@ hide:
   <div class="pl-cta__inner">
     <h2 class="pl-cta__title">Ready to automate the work slowing your team down?</h2>
     <p class="pl-cta__lead">Let&rsquo;s talk about where manual work is costing you the most, and how to remove it.</p>
-    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Schedule free call <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book free call <span class="pl-arrow">&rarr;</span></a>
   </div>
 </section>

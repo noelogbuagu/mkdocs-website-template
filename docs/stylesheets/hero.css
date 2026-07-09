@@ -538,35 +538,85 @@ html {
 }
 
 /* =========================================================================
-   06. About
+   06. About — large intro block (text ~55% / photo ~45%)
    ========================================================================= */
 .pl-about {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
+  /* Use nearly the full content column; photo should read as a large portrait. */
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 1fr);
+  gap: clamp(40px, 4vw, 64px);
   align-items: center;
+  margin-top: 28px;
+}
+.pl-about__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  min-width: 0;
+}
+.pl-about__title {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: var(--pl-font-weight-heading);
+  color: var(--pl-white);
+  line-height: 1.12;
+  letter-spacing: var(--pl-letter-spacing-heading);
+}
+.pl-about__lead {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--pl-white);
+  font-weight: var(--pl-font-weight-semibold);
+}
+.pl-about__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pl-about__list li {
+  position: relative;
+  padding-left: 1.2em;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--pl-gray);
+}
+/* Custom disc so list markers stay aligned with the brand palette. */
+.pl-about__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--pl-white);
 }
 .pl-about__photo {
-  width: 200px;
-  height: 257px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 480px;
   border-radius: var(--pl-radius);
   border: 1px solid var(--pl-card-border);
   background-color: var(--pl-card);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 .pl-about__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  display: block;
 }
-.pl-about__text {
-  margin: 0 0 28px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--pl-gray);
+
+/* Let the About block breathe across the content column (other sections keep
+   the tighter right gutter for card grids). */
+#about.pl-section {
+  padding-right: var(--pl-main-pad-x);
 }
 
 /* =========================================================================
@@ -647,6 +697,18 @@ html {
   .pl-cards--3 {
     grid-template-columns: 1fr 1fr;
   }
+  /* Sidebar still visible here; stack photo above copy (matches mobile reference). */
+  .pl-about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pl-about__photo {
+    order: -1;
+    max-width: none;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
 }
 
 /* Burger drawer that mirrors the landing page's fixed sidebar (mobile only).
@@ -705,7 +767,19 @@ html {
   }
   .pl-about {
     grid-template-columns: 1fr;
-    justify-items: start;
+    gap: 32px;
+    justify-items: stretch;
+  }
+  /* Photo first, full-bleed within the content column, then title / lead / list. */
+  .pl-about__photo {
+    order: -1;
+    max-width: none;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .pl-about__title {
+    font-size: 1.9rem;
   }
   .pl-footer {
     padding: 28px var(--pl-main-pad-x);

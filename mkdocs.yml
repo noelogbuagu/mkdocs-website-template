@@ -4,7 +4,10 @@ site_url: https://yourdomain.com
 
 nav:
   - Home: index.md
-  - Projects: portfolio/index.md
+  - Projects:
+      - Overview: portfolio/index.md
+      - AI Customer Care Bot for Dev X: portfolio/projects/project-1.md
+      - Enterprise Chatbot for Company Y: portfolio/projects/project-2.md
   - Blog: blog/index.md
 
 theme:
