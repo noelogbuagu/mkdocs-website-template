@@ -38,7 +38,7 @@ hide:
         <li>Still exporting CSVs by hand every morning before anyone can make a decision?</li>
         <li>Waiting a day for numbers that should take five minutes?</li>
         <li>Got three tools that don&rsquo;t talk to each other, and someone stitching them together manually?</li>
-        <li>Know there&rsquo;s a smarter way to run this but no one on the team has time to build it?</li>
+        <li>Know there&rsquo;s a smarter way to run this but no one on your team has time to build it?</li>
         <li>Tired of &ldquo;AI&rdquo; pitches that are all deck and no delivery?</li>
       </ul>
       <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Let&rsquo;s fix that <span class="pl-arrow">&rarr;</span></a>

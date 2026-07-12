@@ -243,7 +243,6 @@ html {
   border-top: 1px solid var(--pl-line);
 }
 .pl-section__head {
-  max-width: 640px;
   margin-bottom: 48px;
 }
 .pl-section__title {
@@ -700,6 +699,16 @@ html {
 .pl-status--sm {
   margin: 0;
   font-size: 0.85rem;
+}
+
+.pl-orange-dot::after {
+  content: "\A";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--pl-orange);
+  display: inline-block;
+  margin: 0 10px;
 }
 
 /* =========================================================================
