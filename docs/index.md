@@ -87,29 +87,29 @@ hide:
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">04. IMPACT</p> -->
     <h2 class="pl-section__title">Real results from operational systems</h2>
-    <p class="pl-section__lead">Not demo projects. Production systems running inside live businesses.</p>
+    <p class="pl-section__lead">Measured outcomes from production systems running inside a regulated, multi-market business.</p>
   </header>
 
   <div class="pl-cards pl-cards--2">
     <article class="pl-stat">
-      <p class="pl-stat__value">92%</p>
-      <p class="pl-stat__label">Reduction in daily reporting time</p>
-      <p class="pl-stat__note">Manual multi-source reporting replaced by an automated pipeline.</p>
+      <p class="pl-stat__value">870</p>
+      <p class="pl-stat__label">Customers restored to automated reminder coverage</p>
+      <p class="pl-stat__note">Closed a configuration gap spanning approximately 2,400 orders and 24&ndash;67 missed reminder opportunities each week.</p>
     </article>
     <article class="pl-stat">
-      <p class="pl-stat__value">165k</p>
-      <p class="pl-stat__label">Annual LTV opportunity identified</p>
-      <p class="pl-stat__note">Surfaced from data that was previously locked in spreadsheets.</p>
+      <p class="pl-stat__value">5k+</p>
+      <p class="pl-stat__label">Weekly operational actions made visible</p>
+      <p class="pl-stat__note">Rebuilt historical queue reporting so management could see real workload, throughput, and overdue work.</p>
     </article>
     <article class="pl-stat">
-      <p class="pl-stat__value">66k</p>
-      <p class="pl-stat__label">Monthly revenue pipeline shipped</p>
-      <p class="pl-stat__note">Tracked and reported in real time instead of month-end.</p>
+      <p class="pl-stat__value">25.6k</p>
+      <p class="pl-stat__label">Undelivered events traced to a silent pipeline failure</p>
+      <p class="pl-stat__note">Hardened the path with nine automated monitors and a dedicated export job designed to flag staleness within 36 hours.</p>
     </article>
     <article class="pl-stat">
-      <p class="pl-stat__value">92%</p>
-      <p class="pl-stat__label">From data infrastructure to deployed AI workflows</p>
-      <p class="pl-stat__note">End-to-end delivery, from raw data to production system.</p>
+      <p class="pl-stat__value">~&pound;10k</p>
+      <p class="pl-stat__label">Contribution overstatement corrected</p>
+      <p class="pl-stat__note">Hybrid product-level attribution ensured eligible marketing spend was deducted instead of disappearing from reporting.</p>
     </article>
   </div>
 </section>
