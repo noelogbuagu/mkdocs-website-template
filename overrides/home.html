@@ -33,7 +33,7 @@
             {{ config.site_name }}
           </label>
           <ul class="md-nav__list">
-            <li class="md-nav__item"><a href="#home" class="md-nav__link"><span class="md-ellipsis">01. Home</span></a></li>
+            <li class="md-nav__item"><a href="#home" class="md-nav__link"><span class="md-ellipsis">0.1 Home</span></a></li>
             <li class="md-nav__item"><a href="#about" class="md-nav__link"><span class="md-ellipsis">02. About</span></a></li>
             <li class="md-nav__item"><a href="#services" class="md-nav__link"><span class="md-ellipsis">03. Services</span></a></li>
             <li class="md-nav__item"><a href="#impact" class="md-nav__link"><span class="md-ellipsis">04. Impact</span></a></li>
@@ -71,26 +71,59 @@
 
     <aside class="pl-sidebar">
       <div class="pl-sidebar__top">
-        {#- Dark scheme shows the full icon+wordmark lockup (light text reads on the
-           black sidebar); light scheme shows the icon alone plus the HTML name
-           below, since the lockup's baked-in text wouldn't read on a light bg. -#}
-        <a class="pl-brand" href="{{ nav.homepage.url | url }}">
-          <img class="pl-brand__mark pl-brand__mark--dark" src="{{ 'assets/plurobi-lockup-dark.png' | url }}" alt="Plurobi">
-          <img class="pl-brand__mark pl-brand__mark--light" src="{{ 'assets/plurobi-icon.png' | url }}" alt="Plurobi logo">
-          <span class="pl-brand__name">Plurobi</span>
-        </a>
+        {#- Dark/light schemes each use a full lockup (wordmark baked into the
+           image), so no separate HTML brand name is needed. -#}
+        <div class="pl-logo-container">
+
+          <a class="pl-brand" href="{{ nav.homepage.url | url }}">
+            <img class="pl-brand__mark pl-brand__mark--dark" src="{{ 'assets/plurobi-lockup-dark.png' | url }}" alt="Plurobi">
+            <img class="pl-brand__mark pl-brand__mark--light" src="{{ 'assets/plurobi-lockup-light.png' | url }}" alt="Plurobi">
+          </a>
+
+          {% if config.theme.palette and config.theme.palette is not mapping %}
+          <button class="pl-theme-toggle" type="button" aria-label="Toggle light and dark mode"
+            title="Toggle light and dark mode">
+            <span class="pl-theme-toggle__icon pl-theme-toggle__icon--dark">{% include ".icons/material/brightness-7.svg"
+              %}</span>
+            <span class="pl-theme-toggle__icon pl-theme-toggle__icon--light">{% include ".icons/material/brightness-4.svg"
+              %}</span>
+          </button>
+          {#- The saved scheme is restored by the header's palette script (the
+          header is now always rendered), so no extra restore is needed here. -#}
+          <script>
+            (function () {
+              var button = document.querySelector(".pl-theme-toggle");
+              if (!button) return;
+              // Index order must match theme.palette in mkdocs.yml: [slate, default]
+              var schemes = ["slate", "default"];
+              button.addEventListener("click", function () {
+                var current = document.body.getAttribute("data-md-color-scheme") || "slate";
+                var next = current === "slate" ? "default" : "slate";
+                document.body.setAttribute("data-md-color-scheme", next);
+                if (typeof __md_set === "function") {
+                  __md_set("__palette", {
+                    index: schemes.indexOf(next),
+                    color: { media: "", scheme: next, primary: "custom", accent: "custom" }
+                  });
+                }
+              });
+            })();
+          </script>
+          {% endif %}
+        </div>
+        
         <p class="pl-brand__tagline">Data and AI automation for SMEs</p>
 
         <hr class="pl-divider">
 
         <nav class="pl-nav" aria-label="Sections">
-          <a href="#home">01. Home</a>
-          <a href="#about">02. About</a>
-          <a href="#services">03. Services</a>
-          <a href="#impact">04. Impact</a>
-          <a href="#projects">05. Projects</a>
-          <a href="#process">06. Process</a>
-          <a href="{{ 'blog/' | url }}">07. Blog</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#impact">Impact</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="{{ 'blog/' | url }}">Blog</a>
         </nav>
         {#- Highlight the in-page section currently in view (Figma selected state).
            Deferred until DOMContentLoaded so section targets in .pl-main exist. -#}
@@ -210,7 +243,7 @@
            mechanism is unreliable outside its native header, so the landing
            page uses a plain button that flips the scheme and persists the
            choice via Material's storage helpers (keeps inner pages in sync). -#}
-        {% if config.theme.palette and config.theme.palette is not mapping %}
+        <!-- {% if config.theme.palette and config.theme.palette is not mapping %}
           <button class="pl-theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode">
             <span class="pl-theme-toggle__icon pl-theme-toggle__icon--dark">{% include ".icons/material/brightness-7.svg" %}</span>
             <span class="pl-theme-toggle__icon pl-theme-toggle__icon--light">{% include ".icons/material/brightness-4.svg" %}</span>
@@ -236,15 +269,17 @@
               });
             })();
           </script>
-        {% endif %}
+        {% endif %} -->
       </div>
 
+      <hr class="pl-divider">
+
       <div class="pl-sidebar__bottom">
-        <p class="pl-status"><span class="pl-dot"></span> Available for projects</p>
         <a class="pl-btn pl-btn--primary pl-btn--block" href="{{ contact }}">
           Book free call <span class="pl-arrow">&rarr;</span>
         </a>
-        <p class="pl-stack">Python <span class="pl-orange-dot">.</span> AI <span class="pl-orange-dot">.</span> Automation <span class="pl-orange-dot">.</span></p>
+        <!-- <p class="pl-stack">Python <span class="pl-orange-dot" aria-hidden="true"></span> AI <span class="pl-orange-dot" aria-hidden="true"></span> Automation</p> -->
+        <p class="pl-status"><span class="pl-dot"></span> Available for projects</p>
       </div>
     </aside>
 
@@ -254,8 +289,7 @@
       <footer class="pl-footer">
         <a class="pl-brand pl-brand--sm" href="{{ nav.homepage.url | url }}">
           <img class="pl-brand__mark pl-brand__mark--dark" src="{{ 'assets/plurobi-lockup-dark.png' | url }}" alt="Plurobi">
-          <img class="pl-brand__mark pl-brand__mark--light" src="{{ 'assets/plurobi-icon.png' | url }}" alt="Plurobi logo">
-          <span class="pl-brand__name">Plurobi</span>
+          <img class="pl-brand__mark pl-brand__mark--light" src="{{ 'assets/plurobi-lockup-light.png' | url }}" alt="Plurobi">
         </a>
         <span class="pl-footer__tagline">Data and AI automation for SME&rsquo;s</span>
         <span class="pl-status pl-status--sm"><span class="pl-dot"></span> Available for projects</span>

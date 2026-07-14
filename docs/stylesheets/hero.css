@@ -52,6 +52,13 @@ html {
   z-index: 2;
 }
 
+.pl-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .pl-brand {
   display: inline-flex;
   align-items: center;
@@ -59,27 +66,18 @@ html {
   text-decoration: none;
 }
 .pl-brand__mark {
-  /* Icon (light scheme) is square; the dark-scheme lockup is wider (icon +
-     baked-in wordmark), so height is fixed and width follows the asset's
-     own aspect ratio instead of being forced into a square box. */
+  /* Both lockups are wide (icon + wordmark); height is fixed and width
+     follows each asset's aspect ratio. */
   height: 30px;
   width: auto;
   object-fit: contain;
 }
 .pl-brand__mark--light {
-  width: 30px;
   display: none;
 }
-/* Dark scheme's lockup image already contains the "Plurobi" wordmark, so the
-   separate HTML name is only needed in light scheme (icon-only mark). */
-[data-md-color-scheme="slate"] .pl-brand__name {
-  display: none;
-}
+/* Wordmark is baked into both lockups — hide the HTML name. */
 .pl-brand__name {
-  font-size: 1.4rem;
-  font-weight: var(--pl-font-weight-heading);
-  color: var(--pl-white);
-  letter-spacing: -0.01em;
+  display: none;
 }
 .pl-brand__tagline {
   margin: 14px 0 0;
@@ -136,6 +134,7 @@ html {
 .pl-status {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin: 0 0 16px;
   font-size: 0.9rem;
@@ -155,6 +154,7 @@ html {
 .pl-sidebar__bottom .pl-stack {
   margin-top: 0;
   font-size: 0.78rem;
+  text-align: center;
 }
 /* Compact CTA only in the sidebar — hero/section buttons stay full size. */
 .pl-sidebar__bottom .pl-btn {
@@ -162,12 +162,50 @@ html {
   font-size: 0.85rem;
   border-radius: 6px;
 }
+/* Status “available” indicator (green). Outer ring breathes in/out.
+   Switch animations below: pl-dot-breathe (expand/contract) vs pl-dot-pulse (ripple). */
 .pl-dot {
+  display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: var(--pl-green);
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.28);
+  flex: none;
+  /* animation: pl-dot-breathe 2.4s ease-in-out infinite; */
+  animation: pl-dot-pulse 2s ease-out infinite;
+}
+
+/* Active: outer ring expands and contracts (breathing). */
+@keyframes pl-dot-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.35);
+  }
+}
+
+/* /* Alternate: one-shot expanding ripple that fades out. */
+@keyframes pl-dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-dot {
+    animation: none;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  }
 }
 
 .pl-stack {
@@ -175,32 +213,32 @@ html {
   font-size: 0.85rem;
   color: var(--pl-gray);
 }
-.pl-stack span {
-  color: var(--pl-orange);
-  margin: 0 4px;
+/* Stack separators — orange dots between “Python / AI / Automation”. */
+.pl-orange-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--pl-orange);
+  margin: 0 8px;
+  vertical-align: middle;
 }
 
 /* =========================================================================
    Main content column
    ========================================================================= */
 .pl-main {
-  /* Single source of truth for the content column's horizontal padding.
-     Section dividers and the footer bleed out by this amount so their
-     horizontal rules start at the sidebar's vertical line on the left
-     (see .pl-section / .pl-footer below). */
-  /* Internal gutter of the Figma content frame (its left/right padding).
-     ~40px read from the design; tune here if you have the exact value. */
+  /* Left/right content gutters. Dividers span the full column; only the
+     content uses the larger right padding for breathing room. */
   --pl-main-pad-x: 40px;
-  /* Divider length: anchored to the sidebar line, stopping short of the
-     right edge to leave a little space, matching the design. Tune here.
-     Card/content right gutter is derived from this so cards always end a
-     little before the divider (see .pl-section). */
-  --pl-divider-width: 92%;
-  /* Content starts flush with the sidebar's right edge. */
+  --pl-main-pad-right: 80px;
+  --pl-divider-width: 100%;
+  /* Fill everything to the right of the sidebar (no fixed content max-width). */
   margin-left: var(--pl-sidebar-width);
-  padding: 15px var(--pl-main-pad-x) 0;
-  /* Figma content frame width. */
-  max-width: 1232px;
+  width: calc(100% - var(--pl-sidebar-width));
+  max-width: none;
+  padding: 15px var(--pl-main-pad-right) 0 var(--pl-main-pad-x);
+  box-sizing: border-box;
 }
 
 /* --- Shared section primitives ------------------------------------------- */
@@ -217,22 +255,17 @@ html {
 }
 
 .pl-section {
-  /* Negative margins pull the box out to the sidebar line on the left; the
-     left padding keeps content aligned with the hero above it. The right
-     gutter is derived from --pl-divider-width so the content (cards) always
-     ends a little before the divider's right end, at any screen size.
-     The divider itself is drawn by the shared ::before rule below. */
+  /* Bleed to the column edges so the divider can span full width; content
+     stays inset via left/right padding (right is intentionally larger). */
   position: relative;
-  margin: 0 calc(-1 * var(--pl-main-pad-x));
+  margin: 0 calc(-1 * var(--pl-main-pad-right)) 0 calc(-1 * var(--pl-main-pad-x));
   padding-top: 64px;
   padding-bottom: 64px;
   padding-left: var(--pl-main-pad-x);
-  padding-right: calc(100% - var(--pl-divider-width) + var(--pl-main-pad-x));
+  padding-right: var(--pl-main-pad-right);
 }
 
-/* Shared top divider for sections + footer: starts at the sidebar's vertical
-   line (left: 0, thanks to the negative left margin above) and spans
-   --pl-divider-width, leaving a little space before the right edge. */
+/* Full-width section/footer rules across the content column. */
 .pl-section::before,
 .pl-footer::before {
   content: "";
@@ -310,12 +343,12 @@ html {
    ========================================================================= */
 .pl-hero {
   position: relative;
-  padding: 10px 0 50px;
+  padding: 100px 0 100px;
   /* Figma hero frame: H 984, "Clip content" on, 45px spacing between the
      stacked eyebrow / title / lead / actions (the child margins are zeroed
      below so this gap governs). The ring is clipped to the hero box. */
-  min-height: 984px;
-  max-width: 1232px;
+  /* min-height: 984px; */
+  max-width: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -548,7 +581,8 @@ html {
   color: var(--pl-orange);
 }
 .pl-step__title {
-  margin: 6px 0 6px;
+  margin: 0px;
+  margin-bottom: 6px;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--pl-white);
@@ -636,12 +670,6 @@ html {
   display: block;
 }
 
-/* Let the About block breathe across the content column (other sections keep
-   the tighter right gutter for card grids). */
-#about.pl-section {
-  padding-right: var(--pl-main-pad-x);
-}
-
 /* =========================================================================
    07. Closing CTA banner
    ========================================================================= */
@@ -674,8 +702,8 @@ html {
    ========================================================================= */
 .pl-footer {
   position: relative;
-  margin: 0 calc(-1 * var(--pl-main-pad-x));
-  padding: 32px var(--pl-main-pad-x);
+  margin: 0 calc(-1 * var(--pl-main-pad-right)) 0 calc(-1 * var(--pl-main-pad-x));
+  padding: 32px var(--pl-main-pad-right) 32px var(--pl-main-pad-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -686,12 +714,6 @@ html {
   height: 24px;
   width: auto;
 }
-.pl-brand--sm .pl-brand__mark--light {
-  width: 24px;
-}
-.pl-brand--sm .pl-brand__name {
-  font-size: 1.1rem;
-}
 .pl-footer__tagline {
   font-size: 0.9rem;
   color: var(--pl-gray);
@@ -699,16 +721,6 @@ html {
 .pl-status--sm {
   margin: 0;
   font-size: 0.85rem;
-}
-
-.pl-orange-dot::after {
-  content: "\A";
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: var(--pl-orange);
-  display: inline-block;
-  margin: 0 10px;
 }
 
 /* =========================================================================
@@ -770,12 +782,12 @@ html {
     display: none;
   }
   .pl-main {
-    /* Narrower gutter on mobile; sections + footer bleed to this value.
-       Full-width dividers here (single column), which also makes the derived
-       section right gutter resolve back to a symmetric --pl-main-pad-x. */
+    /* Symmetric gutters on mobile once the fixed sidebar is gone. */
     --pl-main-pad-x: 24px;
+    --pl-main-pad-right: 24px;
     --pl-divider-width: 100%;
     margin-left: 0;
+    width: 100%;
     padding: 40px var(--pl-main-pad-x) 0;
   }
   .pl-hero {
@@ -815,7 +827,7 @@ html {
     font-size: 1.9rem;
   }
   .pl-footer {
-    padding: 28px var(--pl-main-pad-x);
+    padding: 28px var(--pl-main-pad-right) 28px var(--pl-main-pad-x);
   }
 }
 

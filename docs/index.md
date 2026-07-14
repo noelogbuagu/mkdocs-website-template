@@ -76,7 +76,7 @@ hide:
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
       </span>
-      <h3 class="pl-card__title">Data Pipeline</h3>
+      <h3 class="pl-card__title">Data Pipelines</h3>
       <p class="pl-card__text">Connect every tool into one place, so you always know what's happening, not just what happened.</p>
     </article>
   </div>
@@ -85,7 +85,7 @@ hide:
 <!-- ===================== 04. IMPACT ===================== -->
 <section class="pl-section" id="impact">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">04. IMPACT</p>
+    <!-- <p class="pl-eyebrow">04. IMPACT</p> -->
     <h2 class="pl-section__title">Real results from operational systems</h2>
     <p class="pl-section__lead">Not demo projects. Production systems running inside live businesses.</p>
   </header>
@@ -117,7 +117,7 @@ hide:
 <!-- ===================== 05. PROJECTS ===================== -->
 <section class="pl-section" id="projects">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">05. PROJECTS</p>
+    <!-- <p class="pl-eyebrow">05. PROJECTS</p> -->
     <h2 class="pl-section__title">Selected works</h2>
     <p class="pl-section__lead">Each project replaced a manual process with a system that just runs.</p>
   </header>
@@ -155,7 +155,7 @@ hide:
 <!-- ===================== 06. PROCESS ===================== -->
 <section class="pl-section" id="process">
   <header class="pl-section__head">
-    <p class="pl-eyebrow">06. PROCESS</p>
+    <!-- <p class="pl-eyebrow">06. PROCESS</p> -->
     <h2 class="pl-section__title">How I operate</h2>
     <p class="pl-section__lead">Tools and method I use to build production-ready systems.</p>
   </header>

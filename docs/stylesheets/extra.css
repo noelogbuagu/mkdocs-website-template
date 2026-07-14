@@ -51,6 +51,9 @@
   --md-primary-fg-color: #050505;
   --md-primary-fg-color--light: #1a1a1a;
   --md-primary-fg-color--dark: #000000;
+  /* Text / icons drawn on the primary (header) surface */
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffff;
   --md-accent-fg-color: var(--pl-orange);
   --md-accent-fg-color--transparent: rgba(255, 93, 0, 0.1);
   --md-typeset-a-color: var(--pl-orange);
@@ -79,6 +82,9 @@
   --md-primary-fg-color: #ffffff;
   --md-primary-fg-color--light: #f5f5f5;
   --md-primary-fg-color--dark: #eeeeee;
+  /* Near-black text on the white header (Material tabs inherit this) */
+  --md-primary-bg-color: #111111;
+  --md-primary-bg-color--light: #111111;
   --md-accent-fg-color: var(--pl-orange);
   --md-accent-fg-color--transparent: rgba(255, 93, 0, 0.12);
   --md-typeset-a-color: var(--pl-orange);
@@ -105,6 +111,21 @@
 [data-md-color-scheme="default"] .md-logo__mark--light,
 [data-md-color-scheme="default"] .pl-brand__mark--light {
   display: inline-block !important;
+}
+
+/* Header lockups are wide (icon + wordmark). Material's default logo box
+   is sized for a square mark — let width follow the lockup aspect ratio. */
+.md-header__button.md-logo img.md-logo__mark,
+.md-nav__button.md-logo img.md-logo__mark {
+  height: 1.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Lockup already includes the “Plurobi” wordmark — hide Material’s
+   duplicate site-name topic so the header doesn’t read as two logos. */
+.md-header__title .md-header__topic:first-child {
+  display: none;
 }
 
 /* -------------------------------------------------------------------------
@@ -220,18 +241,23 @@ body,
 
 .md-header__title,
 .md-tabs__link {
+  /* --pl-white is scheme-aware: white on dark, near-black on light */
   color: var(--pl-white);
 }
 
+/* Material marks the active tab on the <li>, not the <a> — the old
+   `.md-tabs__link--active` rule never matched, so light mode kept
+   Material's white primary-bg text (invisible on a white header). */
+.md-tabs__item--active .md-tabs__link,
 .md-tabs__link--active {
-  color: var(--pl-orange);
+  color: var(--pl-white);
 }
 
 .md-footer-meta {
   background-color: var(--pl-footer-bg);
 }
 
-/* Palette toggle icon colour on the header */
+/* Palette toggle / search / menu icons on the header */
 .md-header__button {
   color: var(--pl-white);
 }
@@ -254,7 +280,6 @@ body,
    Landing page theme toggle (header is hidden on the home template)
    ------------------------------------------------------------------------- */
 .pl-theme-toggle {
-  margin-top: 28px;
   width: 40px;
   height: 40px;
   padding: 8px;

@@ -8,7 +8,8 @@ nav:
       - Overview: portfolio/index.md
       - AI Customer Care Bot for Dev X: portfolio/projects/project-1.md
       - Enterprise Chatbot for Company Y: portfolio/projects/project-2.md
-  - Blog: blog/index.md
+  - Blog:
+      - blog/index.md
 
 theme:
   name: material
@@ -19,6 +20,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - navigation.indexes
     - content.tooltips
     - content.tabs.link
     - content.code.copy
@@ -42,7 +44,9 @@ theme:
   font:
     text: Open Sans
     code: Roboto Mono
-  logo: assets/plurobi-mark.png
+  # Header logo swap lives in overrides/partials/logo.html (lockup dark/light).
+  # This path still gates the partial's {% if config.theme.logo %} branch.
+  logo: assets/plurobi-lockup-dark.png
   favicon: assets/plurobi-mark.png
 
 extra:
@@ -63,6 +67,12 @@ extra:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/hero.css
+
+# mkdocs serve only watches docs/ by default. Theme templates in overrides/
+# (e.g. home.html) need an explicit watch entry for live reload.
+watch:
+  - overrides
+  - includes
 
 plugins:
   - search

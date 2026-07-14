@@ -1,10 +1,10 @@
 {#-
-  Swap logo mark for light vs dark mode.
-  Orange mark on dark backgrounds; black mark on light backgrounds.
+  Header / drawer logo — same lockups as the homepage brand.
+  Dark lockup on slate; light lockup on default (light mode).
 -#}
 {% if config.theme.logo %}
-  <img class="md-logo__mark md-logo__mark--dark" src="{{ config.theme.logo | url }}" alt="logo">
-  <img class="md-logo__mark md-logo__mark--light" src="{{ 'assets/plurobi-mark-black.png' | url }}" alt="logo">
+  <img class="md-logo__mark md-logo__mark--dark" src="{{ 'assets/plurobi-lockup-dark.png' | url }}" alt="logo">
+  <img class="md-logo__mark md-logo__mark--light" src="{{ 'assets/plurobi-lockup-light.png' | url }}" alt="logo">
 {% else %}
   {% set icon = config.theme.icon.logo or "material/library" %}
   {% include ".icons/" ~ icon ~ ".svg" %}
