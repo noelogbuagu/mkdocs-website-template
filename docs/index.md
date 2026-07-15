@@ -86,25 +86,25 @@ hide:
 <section class="pl-section" id="impact">
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">04. IMPACT</p> -->
-    <h2 class="pl-section__title">Business impact, in numbers</h2>
-    <p class="pl-section__lead">Revenue supported, decisions improved, and operations made easier to run.</p>
+    <h2 class="pl-section__title">Selected impact</h2>
+    <p class="pl-section__lead">A snapshot of production systems I&rsquo;ve built and improved across revenue, operations, and decision-making.</p>
   </header>
 
   <div class="pl-cards pl-cards--2">
     <article class="pl-stat">
-      <p class="pl-stat__value">&pound;14.6M</p>
-      <p class="pl-stat__label">Repeat-order revenue supported by automated reminders</p>
-      <p class="pl-stat__note">I co-own and safeguard the system that decides who is reminded and when; &pound;5.0M was attributed during the seven months I actively maintained it.</p>
+      <p class="pl-stat__value">&pound;5M+</p>
+      <p class="pl-stat__label">Repeat revenue supported</p>
+      <p class="pl-stat__note">Co-owned and safeguarded the automated customer journeys behind more than &pound;5M in attributed revenue during the period I maintained them.</p>
     </article>
     <article class="pl-stat">
-      <p class="pl-stat__value">&pound;1.42M</p>
-      <p class="pl-stat__label">New product sales made measurable</p>
-      <p class="pl-stat__note">I connected the missing cost data so 14.3k orders and &pound;425k gross profit became visible with 99.97% cost coverage.</p>
+      <p class="pl-stat__value">14k+</p>
+      <p class="pl-stat__label">Orders made commercially measurable</p>
+      <p class="pl-stat__note">Connected missing cost and margin data for a new product launch, giving leaders a reliable view of revenue, profitability, and unit economics.</p>
     </article>
     <article class="pl-stat">
-      <p class="pl-stat__value">&pound;50.8M</p>
-      <p class="pl-stat__label">Ad spend tied to the products it sold</p>
-      <p class="pl-stat__note">Replaced a rough proportional estimate with direct campaign matching and converted spend from every market into GBP.</p>
+      <p class="pl-stat__value">&pound;50M+</p>
+      <p class="pl-stat__label">Marketing spend matched to the products it promoted</p>
+      <p class="pl-stat__note">Rebuilt attribution so campaign spend could be linked directly to product performance, improving budget and profitability decisions.</p>
     </article>
     <article class="pl-stat">
       <p class="pl-stat__value">5k+</p>
