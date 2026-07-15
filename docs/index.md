@@ -86,30 +86,30 @@ hide:
 <section class="pl-section" id="impact">
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">04. IMPACT</p> -->
-    <h2 class="pl-section__title">What changed after I built it</h2>
-    <p class="pl-section__lead">More repeat revenue, less manual work, clearer operations, and fewer silent failures.</p>
+    <h2 class="pl-section__title">Business impact, in numbers</h2>
+    <p class="pl-section__lead">Revenue supported, decisions improved, and operations made easier to run.</p>
   </header>
 
   <div class="pl-cards pl-cards--2">
     <article class="pl-stat">
-      <p class="pl-stat__value">2.4k</p>
-      <p class="pl-stat__label">Orders restored to automated reorder reminders</p>
-      <p class="pl-stat__note">Automated journeys now prompt customers to reorder on time across three markets, supporting repeat revenue without manual campaign work.</p>
+      <p class="pl-stat__value">&pound;14.6M</p>
+      <p class="pl-stat__label">Repeat-order revenue supported by automated reminders</p>
+      <p class="pl-stat__note">I co-own and safeguard the system that decides who is reminded and when; &pound;5.0M was attributed during the seven months I actively maintained it.</p>
+    </article>
+    <article class="pl-stat">
+      <p class="pl-stat__value">&pound;1.42M</p>
+      <p class="pl-stat__label">New product sales made measurable</p>
+      <p class="pl-stat__note">I connected the missing cost data so 14.3k orders and &pound;425k gross profit became visible with 99.97% cost coverage.</p>
+    </article>
+    <article class="pl-stat">
+      <p class="pl-stat__value">&pound;50.8M</p>
+      <p class="pl-stat__label">Ad spend tied to the products it sold</p>
+      <p class="pl-stat__note">Replaced a rough proportional estimate with direct campaign matching and converted spend from every market into GBP.</p>
     </article>
     <article class="pl-stat">
       <p class="pl-stat__value">5k+</p>
       <p class="pl-stat__label">Weekly operational actions made visible</p>
       <p class="pl-stat__note">Historical queue reporting was rebuilt to expose real workload, throughput, and overdue work.</p>
-    </article>
-    <article class="pl-stat">
-      <p class="pl-stat__value">5</p>
-      <p class="pl-stat__label">Survey breakdowns made self-serve</p>
-      <p class="pl-stat__note">Teams can compare answers by age, generation, gender, BMI, and country without rebuilding spreadsheets or formulas for every question.</p>
-    </article>
-    <article class="pl-stat">
-      <p class="pl-stat__value">36h</p>
-      <p class="pl-stat__label">To flag a customer messaging failure</p>
-      <p class="pl-stat__note">After 25,607 customer updates went unsent, monitoring was added so delivery problems are caught quickly instead of staying hidden.</p>
     </article>
   </div>
 </section>
