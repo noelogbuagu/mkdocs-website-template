@@ -593,6 +593,9 @@ html {
   line-height: 1.5;
   color: var(--pl-gray);
 }
+.pl-section__actions {
+  margin-top: 32px;
+}
 
 /* =========================================================================
    06. About — large intro block (text ~55% / photo ~45%)

@@ -156,44 +156,51 @@ hide:
 <section class="pl-section" id="process">
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">06. PROCESS</p> -->
-    <h2 class="pl-section__title">How I operate</h2>
-    <p class="pl-section__lead">Tools and method I use to build production-ready systems.</p>
+    <h2 class="pl-section__title">How an engagement runs</h2>
+    <p class="pl-section__lead">Five steps from first call to a system your team relies on.</p>
   </header>
-
-  <div class="pl-tags pl-tags--stack">
-    <span>Python</span><span>SQL</span><span>FastAPI</span><span>OpenAI</span><span>Pandas</span><span>Docker</span><span>AWS</span>
-  </div>
 
   <ol class="pl-steps">
     <li class="pl-step">
       <span class="pl-step__num">01</span>
       <div class="pl-step__body">
-        <h3 class="pl-step__title">Diagnose</h3>
-        <p class="pl-step__text">Understand the manual process and where time is being lost.</p>
+        <h3 class="pl-step__title">Intro call</h3>
+        <p class="pl-step__text">We talk through the problem. If I&rsquo;m not the right fit, I&rsquo;ll tell you.</p>
       </div>
     </li>
     <li class="pl-step">
       <span class="pl-step__num">02</span>
       <div class="pl-step__body">
-        <h3 class="pl-step__title">Connect</h3>
-        <p class="pl-step__text">Bring data from spreadsheets, systems, and databases into one place.</p>
+        <h3 class="pl-step__title">Plan</h3>
+        <p class="pl-step__text">We agree on what I&rsquo;ll build, how it fits your systems, and what success looks like.</p>
       </div>
     </li>
     <li class="pl-step">
       <span class="pl-step__num">03</span>
       <div class="pl-step__body">
-        <h3 class="pl-step__title">Automate</h3>
-        <p class="pl-step__text">Build the reporting, AI, or workflow layer.</p>
+        <h3 class="pl-step__title">Build</h3>
+        <p class="pl-step__text">I build with your real data and tools. You see working software in the first weeks.</p>
       </div>
     </li>
     <li class="pl-step">
       <span class="pl-step__num">04</span>
       <div class="pl-step__body">
-        <h3 class="pl-step__title">Deploy</h3>
-        <p class="pl-step__text">Ship a reliable system that teams can use immediately.</p>
+        <h3 class="pl-step__title">Test</h3>
+        <p class="pl-step__text">Before anyone depends on it, I test the system against real cases and prove it&rsquo;s reliable.</p>
+      </div>
+    </li>
+    <li class="pl-step">
+      <span class="pl-step__num">05</span>
+      <div class="pl-step__body">
+        <h3 class="pl-step__title">Ship &amp; support</h3>
+        <p class="pl-step__text">I ship to production, hand over the docs, and stick around to keep it improving.</p>
       </div>
     </li>
   </ol>
+
+  <div class="pl-section__actions">
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book an intro call <span class="pl-arrow">&rarr;</span></a>
+  </div>
 </section>
 
 <!-- ===================== 07. CTA ===================== -->
