@@ -1,6 +1,6 @@
 ---
 title: Case Studies
-description: Anonymised production systems I have built and improved across revenue automation, product profitability, and marketing decision-making.
+description: Anonymised production systems I have built and improved across revenue automation, product profitability, marketing, operations, customer service, and self-service analytics.
 ---
 
 # Featured Case Studies
@@ -34,6 +34,30 @@ The client details are anonymised, but the problems, technical decisions, and ro
     **£50M+ in advertising spend matched to product performance.**
 
     Replaced broad proportional allocation with campaign-level product attribution and consistent multi-currency reporting.
+
+-   [Operations Control Tower](projects/operations-control-tower.md)
+
+    ---
+
+    **5,000+ weekly operational actions made visible.**
+
+    Rebuilt time-aware reporting so managers could see real workload, throughput, completed work, and overdue activity.
+
+-   [Survey Intelligence Platform](projects/survey-intelligence-platform.md)
+
+    ---
+
+    **Five demographic views made reusable and self-service.**
+
+    Turned difficult survey exports into governed analysis for single-select, multi-select, and demographic comparisons.
+
+-   [Customer Contact Intelligence](projects/customer-contact-intelligence.md)
+
+    ---
+
+    **5,000+ inbound contacts reconnected to the orders they concerned.**
+
+    Repaired the matching path between customer contacts and orders so service demand could be measured more accurately.
 
 </div>
 
