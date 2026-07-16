@@ -6,8 +6,9 @@ nav:
   - Home: index.md
   - Projects:
       - Overview: portfolio/index.md
-      - AI Customer Care Bot for Dev X: portfolio/projects/project-1.md
-      - Enterprise Chatbot for Company Y: portfolio/projects/project-2.md
+      - Automated Repeat Revenue Engine: portfolio/projects/automated-repeat-revenue-engine.md
+      - Product Launch Profitability System: portfolio/projects/product-launch-profitability-system.md
+      - Marketing Attribution Engine: portfolio/projects/marketing-attribution-engine.md
   - Blog:
       - blog/index.md
 
@@ -67,6 +68,11 @@ extra:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/hero.css
+  - stylesheets/mermaid.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@11.4.1/dist/mermaid.min.js
+  - javascripts/mermaid.js
 
 # mkdocs serve only watches docs/ by default. Theme templates in overrides/
 # (e.g. home.html) need an explicit watch entry for live reload.
@@ -102,7 +108,11 @@ markdown_extensions:
       # --8<-- "filename.md" instead of duplicating it on every page.
       # Path is outside docs/ so MkDocs doesn't also build these as pages.
       base_path: [includes]
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
   - pymdownx.critic
   - pymdownx.emoji:
