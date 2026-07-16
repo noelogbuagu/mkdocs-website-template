@@ -122,33 +122,30 @@ hide:
     <p class="pl-section__lead">Three production systems with measurable impact across revenue, profitability, and marketing decisions.</p>
   </header>
 
-  <div class="pl-projects">
-    <a class="pl-project" href="portfolio/">
-      <div class="pl-project__body">
-        <h3 class="pl-project__title">Automated Repeat Revenue Engine</h3>
-        <p class="pl-project__text">Co-owned and safeguarded automated customer journeys supporting &pound;5M+ in attributed repeat revenue, with monitoring and fixes that kept reminders accurate and reliable.</p>
-        <div class="pl-tags"><span>Revenue Automation</span><span>Data Reliability</span><span>Customer Journeys</span></div>
-      </div>
-      <span class="pl-project__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-    </a>
+  <div class="pl-cards pl-cards--3">
+    <article class="pl-card">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg>
+      </span>
+      <h3 class="pl-card__title">Automated Repeat Revenue Engine</h3>
+      <p class="pl-card__text">Co-owned and safeguarded automated customer journeys supporting &pound;5M+ in attributed repeat revenue, with monitoring and fixes that kept reminders accurate and reliable.</p>
+    </article>
 
-    <a class="pl-project" href="portfolio/">
-      <div class="pl-project__body">
-        <h3 class="pl-project__title">Product Launch Profitability System</h3>
-        <p class="pl-project__text">Connected supplier, bundle, and operating costs so 14k+ orders could be measured accurately for revenue, margin, and unit economics.</p>
-        <div class="pl-tags"><span>Data Pipelines</span><span>Profitability</span><span>Commercial Analytics</span></div>
-      </div>
-      <span class="pl-project__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-    </a>
+    <article class="pl-card">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </span>
+      <h3 class="pl-card__title">Product Launch Profitability System</h3>
+      <p class="pl-card__text">Connected supplier, bundle, and operating costs so 14k+ orders could be measured accurately for revenue, margin, and unit economics.</p>
+    </article>
 
-    <a class="pl-project" href="portfolio/">
-      <div class="pl-project__body">
-        <h3 class="pl-project__title">Marketing Attribution Engine</h3>
-        <p class="pl-project__text">Rebuilt attribution across &pound;50M+ in advertising spend, matching campaigns to the products they promoted and converting every market into a common currency.</p>
-        <div class="pl-tags"><span>Marketing Analytics</span><span>Attribution</span><span>Multi-Currency</span></div>
-      </div>
-      <span class="pl-project__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-    </a>
+    <article class="pl-card">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </span>
+      <h3 class="pl-card__title">Marketing Attribution Engine</h3>
+      <p class="pl-card__text">Rebuilt attribution across &pound;50M+ in advertising spend, matching campaigns to the products they promoted and converting every market into a common currency.</p>
+    </article>
   </div>
 </section>
 
