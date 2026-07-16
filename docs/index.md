@@ -119,7 +119,7 @@ hide:
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">05. PROJECTS</p> -->
     <h2 class="pl-section__title">Featured projects</h2>
-    <p class="pl-section__lead">Three production systems with measurable impact across revenue, profitability, and marketing decisions.</p>
+    <p class="pl-section__lead">Six production systems with measurable impact across revenue, profitability, marketing, operations, and customer insight.</p>
   </header>
 
   <style>
@@ -166,6 +166,33 @@ hide:
       <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
       <h3 class="pl-card__title">Marketing Attribution Engine</h3>
       <p class="pl-card__text">Rebuilt attribution across &pound;50M+ in advertising spend, matching campaigns to the products they promoted and converting every market into a common currency.</p>
+    </a>
+
+    <a class="pl-card" href="portfolio/projects/operations-control-tower/" style="text-decoration: none;">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="17" x2="8" y2="11"/><line x1="12" y1="17" x2="12" y2="7"/><line x1="16" y1="17" x2="16" y2="13"/></svg>
+      </span>
+      <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      <h3 class="pl-card__title">Operations Control Tower</h3>
+      <p class="pl-card__text">Rebuilt time-aware reporting to make 5k+ weekly operational actions visible across workload, throughput, and overdue work.</p>
+    </a>
+
+    <a class="pl-card" href="portfolio/projects/survey-intelligence-platform/" style="text-decoration: none;">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </span>
+      <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      <h3 class="pl-card__title">Survey Intelligence Platform</h3>
+      <p class="pl-card__text">Turned difficult survey exports into reusable self-service analysis across five demographic views and multiple question types.</p>
+    </a>
+
+    <a class="pl-card" href="portfolio/projects/customer-contact-intelligence/" style="text-decoration: none;">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg>
+      </span>
+      <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      <h3 class="pl-card__title">Customer Contact Intelligence</h3>
+      <p class="pl-card__text">Reconnected 5k+ inbound contacts to the orders they concerned so service demand could be measured and compared more accurately.</p>
     </a>
   </div>
 </section>
