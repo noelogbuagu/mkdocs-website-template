@@ -141,7 +141,7 @@ hide:
   </style>
 
   <div class="pl-cards pl-cards--3">
-    <a class="pl-card" href="portfolio/" style="text-decoration: none;">
+    <a class="pl-card" href="portfolio/projects/automated-repeat-revenue-engine/" style="text-decoration: none;">
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg>
       </span>
@@ -150,7 +150,7 @@ hide:
       <p class="pl-card__text">Co-owned and safeguarded automated customer journeys supporting &pound;5M+ in attributed repeat revenue, with monitoring and fixes that kept reminders accurate and reliable.</p>
     </a>
 
-    <a class="pl-card" href="portfolio/" style="text-decoration: none;">
+    <a class="pl-card" href="portfolio/projects/product-launch-profitability-system/" style="text-decoration: none;">
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
       </span>
@@ -159,7 +159,7 @@ hide:
       <p class="pl-card__text">Connected supplier, bundle, and operating costs so 14k+ orders could be measured accurately for revenue, margin, and unit economics.</p>
     </a>
 
-    <a class="pl-card" href="portfolio/" style="text-decoration: none;">
+    <a class="pl-card" href="portfolio/projects/marketing-attribution-engine/" style="text-decoration: none;">
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
       </span>
