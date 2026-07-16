@@ -602,8 +602,8 @@ html {
    ========================================================================= */
 .pl-about {
   display: grid;
-  /* Use nearly the full content column; photo should read as a large portrait. */
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 1fr);
+  /* Text-heavy split; photo stays a clear portrait without dominating the row. */
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.85fr);
   gap: clamp(40px, 4vw, 64px);
   align-items: center;
   margin-top: 28px;
@@ -658,8 +658,10 @@ html {
 }
 .pl-about__photo {
   width: 100%;
+  max-width: 400px;
+  justify-self: end;
   aspect-ratio: 4 / 5;
-  min-height: 480px;
+  min-height: 400px;
   border-radius: var(--pl-radius);
   border: 1px solid var(--pl-card-border);
   background-color: var(--pl-card);
