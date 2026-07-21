@@ -1,6 +1,6 @@
 site_name: Plurobi
 site_description: Data and AI automation for SMEs. Plurobi builds AI systems that remove manual reporting, scattered spreadsheets, and repetitive operations.
-site_url: https://yourdomain.com
+site_url: https://plurobi.com
 
 nav:
   - Home: index.md
