@@ -49,7 +49,7 @@ As you go through this setup, please find all the most up to date information in
 > - If you encounter any issues on Windows:
 >   1. First, check the [official MkDocs Material documentation](https://squidfunk.github.io/mkdocs-material/getting-started/)
 >   2. Try to resolve the issue using their troubleshooting guides
->   3. If the problem persists, please message Dave on Circle for assistance
+>   3. If the problem persists, please message Obi on Circle for assistance
 >   4. Your feedback will help improve the documentation for other Windows users!
 
 
