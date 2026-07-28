@@ -76,11 +76,7 @@ flowchart LR
 
     J[Denominator and privacy checks] -. validate .-> G
 
-    classDef source fill:#202020,stroke:#737373,color:#ffffff;
-    classDef process fill:#2a160d,stroke:#ff5d00,color:#ffffff;
-    classDef outcome fill:#10251a,stroke:#22c55e,color:#ffffff;
-    classDef control fill:#251c0f,stroke:#f59e0b,color:#ffffff;
-
+    %% Role colours come from docs/stylesheets/mermaid.css (light + dark).
     class A,E source;
     class B,C,D,F,G,H process;
     class I outcome;

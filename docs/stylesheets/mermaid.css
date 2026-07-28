@@ -1,14 +1,127 @@
-.mermaid {
+/* =========================================================================
+   Plurobi Mermaid diagrams
+   - Brand-coloured node roles (source / process / outcome / control)
+   - Scheme-aware light + dark tokens (follows Material palette toggle)
+   - Expandable fullscreen overlay for clearer reading
+
+   Note: diagrams use class `.mermaid-diagram` (not Material's `.mermaid`)
+   so they render in the light DOM and these styles can reach the SVG.
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   Brand tokens per colour scheme
+   ------------------------------------------------------------------------- */
+[data-md-color-scheme="slate"] {
+  --pl-mermaid-canvas-bg: #0e0e0e;
+  --pl-mermaid-canvas-border: rgba(255, 255, 255, 0.08);
+  --pl-mermaid-line: #8a8a8a;
+  --pl-mermaid-edge-label-bg: #151515;
+  --pl-mermaid-edge-label-fg: #ffffff;
+  --pl-mermaid-text: #ffffff;
+
+  /* Neutral inputs / starting points */
+  --pl-mermaid-source-fill: #202020;
+  --pl-mermaid-source-stroke: #a7a7a7;
+  --pl-mermaid-source-text: #ffffff;
+
+  /* Core pipeline steps — Plurobi orange */
+  --pl-mermaid-process-fill: #2a160d;
+  --pl-mermaid-process-stroke: #ff5d00;
+  --pl-mermaid-process-text: #ffffff;
+
+  /* Results / commercial outcomes — brand green */
+  --pl-mermaid-outcome-fill: #10251a;
+  --pl-mermaid-outcome-stroke: #22c55e;
+  --pl-mermaid-outcome-text: #ffffff;
+
+  /* Monitoring / governance — amber accent */
+  --pl-mermaid-control-fill: #251c0f;
+  --pl-mermaid-control-stroke: #f59e0b;
+  --pl-mermaid-control-text: #ffffff;
+}
+
+[data-md-color-scheme="default"] {
+  --pl-mermaid-canvas-bg: #f7f7f7;
+  --pl-mermaid-canvas-border: rgba(0, 0, 0, 0.08);
+  --pl-mermaid-line: #5a5a5a;
+  --pl-mermaid-edge-label-bg: #ffffff;
+  --pl-mermaid-edge-label-fg: #111111;
+  --pl-mermaid-text: #111111;
+
+  --pl-mermaid-source-fill: #eeeeee;
+  --pl-mermaid-source-stroke: #737373;
+  --pl-mermaid-source-text: #111111;
+
+  /* Soft orange wash keeps brand visible without dark-mode fills */
+  --pl-mermaid-process-fill: #fff1e8;
+  --pl-mermaid-process-stroke: #ff5d00;
+  --pl-mermaid-process-text: #111111;
+
+  --pl-mermaid-outcome-fill: #e8f8ee;
+  --pl-mermaid-outcome-stroke: #16a34a;
+  --pl-mermaid-outcome-text: #111111;
+
+  --pl-mermaid-control-fill: #fff6e5;
+  --pl-mermaid-control-stroke: #d97706;
+  --pl-mermaid-control-text: #111111;
+}
+
+/* -------------------------------------------------------------------------
+   Diagram shell + expand control
+   ------------------------------------------------------------------------- */
+.pl-mermaid {
+  position: relative;
   margin: 1.75rem 0;
+}
+
+.pl-mermaid__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.pl-mermaid__expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--pl-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--pl-gray);
+  font-family: var(--pl-font-family);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.pl-mermaid__expand:hover,
+.pl-mermaid__expand:focus-visible {
+  color: var(--pl-white);
+  border-color: var(--pl-orange);
+  background: var(--md-accent-fg-color--transparent);
+  outline: none;
+}
+
+.pl-mermaid__expand-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.mermaid-diagram {
+  margin: 0;
   padding: 1.5rem 1rem;
   overflow-x: auto;
   text-align: center;
-  background: var(--md-code-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--pl-mermaid-canvas-bg);
+  border: 1px solid var(--pl-mermaid-canvas-border);
   border-radius: 0.6rem;
 }
 
-.mermaid svg {
+.mermaid-diagram svg {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -16,8 +129,192 @@
   margin: 0 auto;
 }
 
+/* -------------------------------------------------------------------------
+   Node role colours — override Mermaid inline styles via !important so
+   palette toggles update live through CSS variables (no re-render needed).
+   ------------------------------------------------------------------------- */
+.mermaid-diagram .node.source rect,
+.mermaid-diagram .node.source polygon,
+.mermaid-diagram .node.source circle,
+.mermaid-diagram .node.source path {
+  fill: var(--pl-mermaid-source-fill) !important;
+  stroke: var(--pl-mermaid-source-stroke) !important;
+}
+
+.mermaid-diagram .node.process rect,
+.mermaid-diagram .node.process polygon,
+.mermaid-diagram .node.process circle,
+.mermaid-diagram .node.process path {
+  fill: var(--pl-mermaid-process-fill) !important;
+  stroke: var(--pl-mermaid-process-stroke) !important;
+}
+
+.mermaid-diagram .node.outcome rect,
+.mermaid-diagram .node.outcome polygon,
+.mermaid-diagram .node.outcome circle,
+.mermaid-diagram .node.outcome path {
+  fill: var(--pl-mermaid-outcome-fill) !important;
+  stroke: var(--pl-mermaid-outcome-stroke) !important;
+}
+
+.mermaid-diagram .node.control rect,
+.mermaid-diagram .node.control polygon,
+.mermaid-diagram .node.control circle,
+.mermaid-diagram .node.control path {
+  fill: var(--pl-mermaid-control-fill) !important;
+  stroke: var(--pl-mermaid-control-stroke) !important;
+}
+
+.mermaid-diagram .node.source .nodeLabel,
+.mermaid-diagram .node.source span,
+.mermaid-diagram .node.source foreignObject div {
+  color: var(--pl-mermaid-source-text) !important;
+}
+
+.mermaid-diagram .node.process .nodeLabel,
+.mermaid-diagram .node.process span,
+.mermaid-diagram .node.process foreignObject div {
+  color: var(--pl-mermaid-process-text) !important;
+}
+
+.mermaid-diagram .node.outcome .nodeLabel,
+.mermaid-diagram .node.outcome span,
+.mermaid-diagram .node.outcome foreignObject div {
+  color: var(--pl-mermaid-outcome-text) !important;
+}
+
+.mermaid-diagram .node.control .nodeLabel,
+.mermaid-diagram .node.control span,
+.mermaid-diagram .node.control foreignObject div {
+  color: var(--pl-mermaid-control-text) !important;
+}
+
+/* Edges and edge labels follow the active scheme */
+.mermaid-diagram .edgePath path.path,
+.mermaid-diagram .flowchart-link {
+  stroke: var(--pl-mermaid-line) !important;
+}
+
+.mermaid-diagram .edgePath marker path,
+.mermaid-diagram marker path {
+  fill: var(--pl-mermaid-line) !important;
+  stroke: var(--pl-mermaid-line) !important;
+}
+
+.mermaid-diagram .edgeLabel,
+.mermaid-diagram .edgeLabel rect,
+.mermaid-diagram .edgeLabel span,
+.mermaid-diagram .edgeLabel foreignObject div {
+  background-color: var(--pl-mermaid-edge-label-bg) !important;
+  fill: var(--pl-mermaid-edge-label-bg) !important;
+  color: var(--pl-mermaid-edge-label-fg) !important;
+}
+
+.mermaid-diagram .edgeLabel p,
+.mermaid-diagram .labelBkg {
+  background-color: var(--pl-mermaid-edge-label-bg) !important;
+  color: var(--pl-mermaid-edge-label-fg) !important;
+}
+
+/* -------------------------------------------------------------------------
+   Fullscreen / expanded overlay
+   ------------------------------------------------------------------------- */
+.pl-mermaid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.pl-mermaid-overlay.is-open {
+  display: flex;
+}
+
+.pl-mermaid-overlay__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(1200px, 100%);
+  max-height: min(90vh, 900px);
+  padding: 1rem 1rem 1.25rem;
+  background: var(--pl-mermaid-canvas-bg);
+  border: 1px solid var(--pl-mermaid-canvas-border);
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+
+.pl-mermaid-overlay__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.pl-mermaid-overlay__title {
+  margin: 0;
+  color: var(--pl-white);
+  font-family: var(--pl-font-family);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.pl-mermaid-overlay__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--pl-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--pl-gray);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.pl-mermaid-overlay__close:hover,
+.pl-mermaid-overlay__close:focus-visible {
+  color: var(--pl-white);
+  border-color: var(--pl-orange);
+  outline: none;
+}
+
+.pl-mermaid-overlay__body {
+  overflow: auto;
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.pl-mermaid-overlay__body .mermaid-diagram {
+  margin: 0;
+  border: none;
+  background: transparent;
+  min-width: max-content;
+}
+
+.pl-mermaid-overlay__body .mermaid-diagram svg {
+  width: auto;
+  max-width: none;
+  min-width: 720px;
+}
+
+body.pl-mermaid-no-scroll {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 600px) {
-  .mermaid {
+  .mermaid-diagram {
     padding: 1rem 0.5rem;
+  }
+
+  .pl-mermaid-overlay__body .mermaid-diagram svg {
+    min-width: 520px;
   }
 }

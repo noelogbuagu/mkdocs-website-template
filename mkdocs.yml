@@ -113,8 +113,11 @@ markdown_extensions:
       base_path: [includes]
   - pymdownx.superfences:
       custom_fences:
+        # Use a non-default class so Material's closed-shadow Mermaid
+        # integration does not take over. That lets us brand node roles and
+        # support an expand overlay via light-DOM CSS/JS.
         - name: mermaid
-          class: mermaid
+          class: mermaid-diagram
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
   - pymdownx.critic

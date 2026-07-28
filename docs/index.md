@@ -86,7 +86,7 @@ hide:
 <section class="pl-section" id="impact">
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">04. IMPACT</p> -->
-    <h2 class="pl-section__title">Selected impact</h2>
+    <h2 class="pl-section__title">Major Wins</h2>
     <p class="pl-section__lead">A snapshot of production systems I&rsquo;ve built and improved across revenue, operations, and decision-making.</p>
   </header>
 
