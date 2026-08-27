@@ -10,11 +10,11 @@ description: Everybody hates datacenters. Starcloud booked a SpaceX launch on da
 
 # Still, For All Mankind
 
+![Apollo 11 plaque left behind on the Moon](still-for-all-mankind/plaque.jpg)
+
 Over the last year, demand for intelligence has skyrocketed. Agentic AI is more popular than ever. However, the popularity of the infrastructure necessary for its acceleration is declining rapidly. Everybody hates datacenters. New York moved to block the construction of new hyperscale data centres, but Starcloud is here to save the day. Or is it?
 
 <!-- more -->
-
-![Apollo 11 plaque left behind on the Moon](still-for-all-mankind/plaque.jpg)
 
 Let's set the stage for one of the fastest-growing unicorns in history, shall we? On the second day Starcloud existed as a company, its founders booked a SpaceX rideshare launch even though they didn't know what they were putting on it. This helps clarify the greatness I will briefly examine in this post. Strap in for Launch. Too much?
 
