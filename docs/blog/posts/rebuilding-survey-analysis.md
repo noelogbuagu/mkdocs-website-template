@@ -11,6 +11,8 @@ description: "Ten surveys meant doing the CSV-and-script cycle ten times. One ge
 
 # Why We Stopped Rebuilding Survey Analysis From Scratch Every Time
 
+![Phil Connors reporting from Gobbler's Knob in Groundhog Day](rebuilding-survey-analysis/groundhog-day.jpg)
+
 *Our own Groundhog Day.*
 
 At my current company, we run patient feedback surveys, clinical intake forms, and stigma studies through Typeform. Think teams across multiple markets and functions. The same way any company interested in providing its customers with the best possible experience would. For the uninitiated, Typeform is a form builder that lets businesses collect data people want to share. It's easy to use, customisable, and it's great. (Not a sponsorship wink wink).
