@@ -47,7 +47,7 @@ const getThemeVariables = (scheme) => {
     edgeLabelBackground: isDark ? "#151515" : "#ffffff",
     clusterBkg: isDark ? "#151515" : "#f0f0f0",
     clusterBorder: isDark ? "#404040" : "#d0d0d0",
-    fontSize: "15px",
+    fontSize: "16px",
   };
 };
 
@@ -61,9 +61,12 @@ const initializeMermaid = () => {
     theme: "base",
     fontFamily: "Open Sans, sans-serif",
     flowchart: {
-      curve: "basis",
+      curve: "linear",
       htmlLabels: true,
       useMaxWidth: true,
+      padding: 16,
+      nodeSpacing: 40,
+      rankSpacing: 60,
     },
     themeVariables: getThemeVariables(getColorScheme()),
   };
