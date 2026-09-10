@@ -129,4 +129,4 @@ The time that used to go into downloading, cleaning, and joining data by hand no
 
 ## What's next?
 
-This design puts every question on one clean row per response, right up until a question lets someone pick more than one answer. Multi-select breaks that way, which is hard to notice until you try to count how many people picked a specific option. That's a different problem entirely. Stay tuned for next Monday, when we get to day two of the loop.
+This design puts every question on one clean row per response, right up until a question lets someone pick more than one answer. Multi-select breaks that way, which is hard to notice until you try to count how many people picked a specific option. That's a different problem entirely. Day two of the loop is [How to Count a Person Exactly Once](https://plurobi.com/blog/2026/09/08/how-to-count-a-person-exactly-once/).
