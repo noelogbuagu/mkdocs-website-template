@@ -215,7 +215,7 @@ This use case is also firmly an application of an **agent on rails** rather than
 
 There's no Learning module in this design. The agent executes perfectly and does not improve. Every conversation teaches it nothing. Currently, as-is, the agent is not equipped to learn a customer's preferences. So, a customer who books the same corner table every Saturday for a year is a stranger every day. That's fine for iteration one. This is the correct amount of system for the requirement in front of me. Building the memory layer before anyone asked for it would have been engineering for a problem I didn't have yet.
 
-But it does leave a question I keep turning over: at what point does "we'll add that when we need it" become the reason the thing never gets good? The host at a real restaurant doesn't wait for a requirements document before he starts remembering people. He does it because it's obviously worth doing. I don't have a clean answer. Next requirement lands next week, and it's about the menu.
+But it does leave a question I keep turning over: at what point does "we'll add that when we need it" become the reason the thing never gets good? The host at a real restaurant doesn't wait for a requirements document before he starts remembering people. He does it because it's obviously worth doing. I don't have a clean answer. The next requirement is [The Pause Where I Go and Ask the Kitchen](https://plurobi.com/blog/2026/09/14/the-pause-where-i-go-and-ask-the-kitchen/).
 
 If you're building agents and trying to figure it out, I'd genuinely like to hear about it.
 
