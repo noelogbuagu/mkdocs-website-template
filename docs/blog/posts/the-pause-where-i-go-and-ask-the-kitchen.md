@@ -208,7 +208,7 @@ The agent can now route and answer questions about food. Also, it can handle a h
 
 Ladies and gentlemen, we've encountered the personalisation problem, a testy subject. I'll go off personal experience here. Sometimes, brands retain your information without providing context, making you feel awkward rather than special. In comparison, others make the happy birthday email hit perfectly. So, in my experience, it's been 50/50.
 
-It's hard to do well and very easy to do in a way that's worse than not doing it at all. So is it better to be usefully anonymous than badly personal? I'm not sure where that line is. Next time we'll talk about seasonal dishes and remembering people, so I'm about to find out.
+It's hard to do well and very easy to do in a way that's worse than not doing it at all. So is it better to be usefully anonymous than badly personal? I'm not sure where that line is. The next requirement is [The One Where The Agent Learns](https://plurobi.com/blog/2026/09/21/the-one-where-the-agent-learns/).
 
 If you're building agents and trying to figure it out, I'd genuinely like to hear about it.
 
