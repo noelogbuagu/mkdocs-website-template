@@ -92,7 +92,147 @@ Router → Pre-order path
              → Loop back
 ```
 
-![Iteration 4 cognitive architecture: pre-orders, inventory check, kitchen notification, and substitute loop](the-one-where-we-make-contact/architecture.png)
+```mermaid
+%%{init: {"flowchart": {"curve": "linear", "htmlLabels": true, "nodeSpacing": 36, "rankSpacing": 44, "padding": 12, "useMaxWidth": true}}}%%
+flowchart TD
+    INPUT([Customer Message]) --> GROUND
+
+    subgraph GROUND["Grounding Module"]
+        G1["Parse natural language input<br>Extract intent signals + field values"]
+    end
+
+    GROUND --> STM
+
+    subgraph STM["Short-Term Memory"]
+        M1["Conversation state<br>Track intent + fields + preferences + pre-order details"]
+    end
+
+    STM --> CUST_RET
+
+    subgraph CUST_RET["Retrieval Module - Customer Profile DB"]
+        CR1["Look up customer<br>Fetch: preferences · dietary needs · past orders · reservations"]
+    end
+
+    CUST_RET --> ROUTER
+
+    subgraph ROUTER["Semantic Router - LLM"]
+        SR1["Classify intent:<br>Reservation · Menu Inquiry · Seasonal Query · Pre-order Request"]
+    end
+
+    ROUTER -->|Menu or Seasonal Inquiry| RET_MENU
+    ROUTER -->|Reservation Request| FIELD_CHECK
+    ROUTER -->|Pre-order Request| RET_INV
+
+    subgraph RET_MENU["Retrieval Module - Menu KB + Seasonal Calendar"]
+        RM1["Fetch dish details + cross-check seasonal availability"]
+    end
+
+    RET_MENU --> REASON_MENU
+
+    subgraph REASON_MENU["Reasoning Module - LLM"]
+        R_M1["Generate personalised menu answer<br>Highlight seasonal items"]
+    end
+
+    REASON_MENU --> LEARN
+    REASON_MENU --> MENU_OUT([Menu response sent to customer])
+
+    FIELD_CHECK{All required<br>reservation fields<br>present?}
+
+    FIELD_CHECK -->|Missing fields| REASON_FOLLOWUP
+
+    subgraph REASON_FOLLOWUP["Reasoning Module - LLM"]
+        R_F1["Generate personalised follow-up question"]
+    end
+
+    REASON_FOLLOWUP --> LOOP_BACK([Loop back to customer message])
+
+    FIELD_CHECK -->|All fields collected| RET_SEASON
+
+    subgraph RET_SEASON["Retrieval Module - Seasonal Calendar"]
+        RS1["Check seasonal dishes for booking date"]
+    end
+
+    RET_SEASON --> RET_AVAIL
+
+    subgraph RET_AVAIL["Retrieval Module - Reservation DB"]
+        RA1["Check slot availability: date + time + party size"]
+    end
+
+    RET_AVAIL --> AVAIL_CHECK{Slot<br>available?}
+
+    AVAIL_CHECK -->|Yes| DEC_BOOK
+
+    subgraph DEC_BOOK["Decision Module"]
+        D1["Confirm booking + generate reference number"]
+    end
+
+    AVAIL_CHECK -->|No| RET_ALT
+
+    subgraph RET_ALT["Retrieval Module - Reservation DB"]
+        RA2["Query next available slots"]
+    end
+
+    RET_ALT --> REASON_ALT
+
+    subgraph REASON_ALT["Reasoning Module - LLM"]
+        R_A1["Generate alternative slot suggestions"]
+    end
+
+    REASON_ALT --> OFFER([Offer alternatives<br>then loop back])
+
+    DEC_BOOK --> LTM_RES
+
+    subgraph LTM_RES["Long-Term Memory - Reservation DB"]
+        LM1["Write booking record"]
+    end
+
+    LTM_RES --> LEARN
+
+    subgraph RET_INV["Retrieval Module - Inventory DB"]
+        INV1["Check ingredient stock levels<br>for all requested pre-order dishes"]
+    end
+
+    RET_INV --> STOCK_CHECK{Sufficient<br>stock for all<br>dishes?}
+
+    STOCK_CHECK -->|Yes| KITCHEN_TOOL
+
+    subgraph KITCHEN_TOOL["Tool Module - Kitchen Notification System"]
+        KT1["Write pre-order to kitchen management system<br>Alert chef · schedule prep · log against reservation ref"]
+    end
+
+    STOCK_CHECK -->|Insufficient stock| RET_ALTS
+
+    subgraph RET_ALTS["Retrieval Module - Menu KB"]
+        RAS1["Fetch substitute dishes<br>that match dietary needs + current stock"]
+    end
+
+    RET_ALTS --> REASON_SUBS
+
+    subgraph REASON_SUBS["Reasoning Module - LLM"]
+        R_S1["Generate personalised substitute suggestions<br>Explain unavailability diplomatically"]
+    end
+
+    REASON_SUBS --> SUB_OFFER([Offer substitutes<br>then loop back])
+
+    KITCHEN_TOOL --> DEC_PREORDER
+
+    subgraph DEC_PREORDER["Decision Module"]
+        DP1["Confirm pre-order<br>Attach to reservation record"]
+    end
+
+    DEC_PREORDER --> LEARN
+    DEC_PREORDER --> PREORDER_OUT([Pre-order confirmation sent to customer])
+
+    subgraph LEARN["Learning Module"]
+        L1["Update Customer Profile DB<br>Store: preferences · visit history · pre-order history"]
+    end
+
+    %% Role colours come from docs/stylesheets/mermaid.css (light + dark).
+    class INPUT source
+    class GROUND,STM,CUST_RET,ROUTER,RET_MENU,REASON_MENU,REASON_FOLLOWUP,RET_SEASON,RET_AVAIL,RET_ALT,REASON_ALT,DEC_BOOK,LEARN,RET_INV,KITCHEN_TOOL,RET_ALTS,REASON_SUBS,DEC_PREORDER process
+    class FIELD_CHECK,AVAIL_CHECK,STOCK_CHECK control
+    class MENU_OUT,LTM_RES,PREORDER_OUT,LOOP_BACK,OFFER,SUB_OFFER outcome
+```
 
 ## Three decisions worth arguing about
 
