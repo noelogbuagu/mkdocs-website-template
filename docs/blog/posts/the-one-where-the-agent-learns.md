@@ -232,7 +232,7 @@ If you've seen Ex Machina (you really should have), you'll know where this goes 
 
 I don't think there's a clean technical answer to that. It's a decision about what you're willing to infer, and the diagram won't make it for you.
 
-Next time, the agent stops reading and starts taking pre-orders and managing inventory, and tells a chef to start cooking.
+Next time, the agent stops reading and starts taking pre-orders and managing inventory, and tells a chef to start cooking. That story is [The One Where We Make Contact](https://plurobi.com/blog/2026/09/28/the-one-where-we-make-contact/).
 
 If you're building agents and trying to figure it out, I'd genuinely like to hear about it.
 
