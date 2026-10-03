@@ -51,7 +51,9 @@ theme:
   # Header logo swap lives in overrides/partials/logo.html (lockup dark/light).
   # This path still gates the partial's {% if config.theme.logo %} branch.
   logo: assets/plurobi-lockup-dark.png
-  favicon: assets/plurobi-mark.png
+  # Root file, not assets/: robots.txt disallows /assets/, so a favicon
+  # there is invisible to Google. Must stay 48x48 (a multiple of 48).
+  favicon: favicon.ico
 
 extra:
   generator: true

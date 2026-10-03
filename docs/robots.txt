@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+# Favicons live at the site root. /assets/ is disallowed below, and Google
+# will not show a favicon it is not allowed to fetch. Keep these URLs stable.
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /apple-touch-icon.png
+
 # Prevent access to specific file types
 Disallow: /*.md$
 Disallow: /*.yml$
