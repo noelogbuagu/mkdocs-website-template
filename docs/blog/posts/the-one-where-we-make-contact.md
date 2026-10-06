@@ -287,7 +287,7 @@ My anniversary is in less than a week. So I'll take this opportunity to shout ou
 
 Which leaves me with a question I'm still chewing on (get it? I just giggled). If the agent learns to check its own work, who checks the checker?
 
-Next time, it's special occasions, and the agent learns to check its own homework.
+Next time, it's special occasions, and the agent learns to check its own homework. That story is [The One With The Critic](https://plurobi.com/blog/2026/10/05/the-one-with-the-critic/).
 
 If you're building agents and trying to figure it out, I'd genuinely like to hear about it.
 
