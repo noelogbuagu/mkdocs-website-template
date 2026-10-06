@@ -10,6 +10,8 @@ description: Special occasions and personalised recommendations, checked by a se
 
 # The One With The Critic
 
+![Remy on Linguini's head, reflected in the kitchen mirror in Ratatouille](the-one-with-the-critic/ratatouille.jpg)
+
 Last time on Obi the Explorer, [the agent made contact](https://plurobi.com/blog/2026/09/28/the-one-where-we-make-contact/) with the outside world. It started telling the kitchen what to do, and I spent most of the previous post explaining why it should check the fridge first. I closed on a question I couldn't quite answer. If the agent learns to check its own work, who checks the checker?
 
 This week, we find out. Kind of.
