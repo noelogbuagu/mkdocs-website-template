@@ -20,7 +20,7 @@ hide:
   <h1 class="pl-hero__title">From manual flows<br><span class="pl-accent">to systems that</span><br><span class="pl-accent">run themselves.</span></h1>
   <p class="pl-hero__lead">I build end-to-end data and AI systems for SMEs, turning messy spreadsheets and data into automated pipelines and real-time insight.</p>
   <div class="pl-hero__actions">
-    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book free call <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/virtual-hangout">Book free call <span class="pl-arrow">&rarr;</span></a>
     <a class="pl-btn pl-btn--ghost" href="#projects">View projects</a>
   </div>
 </section>
@@ -41,7 +41,7 @@ hide:
         <li>Know there&rsquo;s a smarter way to run this but no one on your team has time to build it?</li>
         <li>Tired of &ldquo;AI&rdquo; pitches that are all deck and no delivery?</li>
       </ul>
-      <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Let&rsquo;s fix that <span class="pl-arrow">&rarr;</span></a>
+      <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/virtual-hangout">Let&rsquo;s fix that <span class="pl-arrow">&rarr;</span></a>
     </div>
     <div class="pl-about__photo">
       <img src="assets/obiogbuagu.jpeg" alt="Obi Ogbuagu, AI Engineer and founder of Plurobi">
@@ -244,7 +244,7 @@ hide:
   </ol>
 
   <div class="pl-section__actions">
-    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book an intro call <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/virtual-hangout">Book an intro call <span class="pl-arrow">&rarr;</span></a>
   </div>
 </section>
 
@@ -253,6 +253,6 @@ hide:
   <div class="pl-cta__inner">
     <h2 class="pl-cta__title">Ready to automate the work slowing your team down?</h2>
     <p class="pl-cta__lead">Let&rsquo;s talk about where manual work is costing you the most, and how to remove it.</p>
-    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/free-ai-strategy-consultation">Book free call <span class="pl-arrow">&rarr;</span></a>
+    <a class="pl-btn pl-btn--primary" href="https://calendly.com/obiogbuagu/virtual-hangout">Book free call <span class="pl-arrow">&rarr;</span></a>
   </div>
 </section>

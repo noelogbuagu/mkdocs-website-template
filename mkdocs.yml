@@ -65,7 +65,7 @@ extra:
     - icon: fontawesome/solid/paper-plane
       link: mailto:hello@plurobi.com
   # Central place for call-to-action links used across the landing page
-  contact_url: https://calendly.com/obiogbuagu/free-ai-strategy-consultation
+  contact_url: https://calendly.com/obiogbuagu/virtual-hangout
   analytics:
     # provider: google
     # property: G-XXXXXXimport
