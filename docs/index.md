@@ -119,7 +119,7 @@ hide:
   <header class="pl-section__head">
     <!-- <p class="pl-eyebrow">05. PROJECTS</p> -->
     <h2 class="pl-section__title">Featured projects</h2>
-    <p class="pl-section__lead">Six production systems with measurable impact across revenue, profitability, marketing, operations, and customer insight.</p>
+    <p class="pl-section__lead">Work I have shipped across revenue, profitability, marketing, operations, customer service, and invoice review.</p>
   </header>
 
   <style>
@@ -177,15 +177,6 @@ hide:
       <p class="pl-card__text">Rebuilt time-aware reporting to make 5k+ weekly operational actions visible across workload, throughput, and overdue work.</p>
     </a>
 
-    <a class="pl-card" href="portfolio/projects/survey-intelligence-platform/" style="text-decoration: none;">
-      <span class="pl-card__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      </span>
-      <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-      <h3 class="pl-card__title">Survey Intelligence Platform</h3>
-      <p class="pl-card__text">Turned difficult survey exports into reusable self-service analysis across five demographic views and multiple question types.</p>
-    </a>
-
     <a class="pl-card" href="portfolio/projects/customer-contact-intelligence/" style="text-decoration: none;">
       <span class="pl-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg>
@@ -193,6 +184,15 @@ hide:
       <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
       <h3 class="pl-card__title">Customer Contact Intelligence</h3>
       <p class="pl-card__text">Reconnected 5k+ inbound contacts to the orders they concerned so service demand could be measured and compared more accurately.</p>
+    </a>
+
+    <a class="pl-card" href="portfolio/projects/invoice-review-system/" style="text-decoration: none;">
+      <span class="pl-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+      </span>
+      <span class="pl-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      <h3 class="pl-card__title">Invoice Review System</h3>
+      <p class="pl-card__text">A review a small business can run on every supplier invoice. Each document is read twice, and approval stays blocked until VAT, totals, and duplicates pass.</p>
     </a>
   </div>
 </section>

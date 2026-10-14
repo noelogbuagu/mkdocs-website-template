@@ -1,13 +1,13 @@
 ---
 title: Case Studies
-description: Anonymised production systems I have built and improved across revenue automation, product profitability, marketing, operations, customer service, and self-service analytics.
+description: Systems I have built and shipped across revenue automation, product profitability, marketing, operations, customer service, self-service analytics, and invoice review.
 ---
 
 # Featured Case Studies
 
 These projects show how I turn disconnected data, manual processes, and unreliable reporting into production systems that support revenue and better decisions.
 
-The client details are anonymised, but the problems, technical decisions, and rounded impact figures come from systems I shipped and maintained in production.
+Where a project came from client work, the client is anonymised and the figures are rounded from systems I shipped and maintained. The invoice review is a product I built for small businesses that still check supplier invoices by hand.
 
 <div class="grid cards" markdown>
 
@@ -59,6 +59,14 @@ The client details are anonymised, but the problems, technical decisions, and ro
 
     Repaired the matching path between customer contacts and orders so service demand could be measured more accurately.
 
+-   [Invoice Review System](projects/invoice-review-system.md)
+
+    ---
+
+    **Approval blocked until VAT, totals, and duplicates pass.**
+
+    A review a small business can run on every supplier invoice, with errors sent back to the supplier for a document the same rules check again.
+
 </div>
 
 ## What these projects demonstrate
@@ -67,5 +75,6 @@ The client details are anonymised, but the problems, technical decisions, and ro
 - Clear separation between measured impact and personal contribution
 - Data systems designed for reliability, auditability, and ongoing maintenance
 - Architecture and reporting that non-technical teams can use to make decisions
+- AI workflows where the model reads the document and deterministic rules decide what can be approved
 
 --8<-- "cta-book-call.md"
