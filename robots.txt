@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Favicons live at the site root. /assets/ is disallowed below, and Google
+# will not show a favicon it is not allowed to fetch. Keep these URLs stable.
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /apple-touch-icon.png
+
+# Prevent access to specific file types
+Disallow: /*.md$
+Disallow: /*.yml$
+Disallow: /*.yaml$
+Disallow: /*.json$
+
+# Prevent access to search results
+Disallow: /search/
+Disallow: /search.html
+
+# Prevent access to specific directories (adjust as needed)
+Disallow: /assets/
+Disallow: /javascripts/
+Disallow: /stylesheets/
+
+# Add a crawl delay to slow down bots
+Crawl-delay: 5
+
+# Block common scraping tools
+User-agent: scrapy
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+Sitemap: https://yourdomain.com/sitemap.xml
