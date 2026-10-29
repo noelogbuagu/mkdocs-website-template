@@ -213,3 +213,5 @@ In my case, it was significantly less dramatic. I found what our bill primarily 
 If you're paying for connectors and wondering which ones you could own, or you've started and you're stuck on proving the replacement works, I'd genuinely like to hear about it. And if you haven't seen Wicked, please fix that this weekend, at least part 1. I'm not the biggest fan of part 2.
 
 Which connector in your stack would you trust yourself least to replace?
+
+--8<-- "cta-book-call.md"

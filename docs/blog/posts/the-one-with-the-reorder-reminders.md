@@ -159,3 +159,5 @@ Patients hear from us when they actually need to, about the thing they actually 
 If you haven't watched LOST, please change your life forever.
 
 If your team sends lifecycle messages from warehouse data and the reminders keep landing at the wrong time, or not at all, I'd like to hear how you're handling it.
+
+--8<-- "cta-book-call.md"

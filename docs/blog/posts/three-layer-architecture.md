@@ -125,3 +125,5 @@ Since making the switch:
 The plugin is [open source under the MIT license](https://github.com/Simple-Online-Healthcare/dbt-spec-driven-plugin). If you're running an AI agent against your own dbt repo, I'd be curious what your version of "one file doing everything" looked like and whether it broke the same way ours did.
 
 More posts in this series are landing on [plurobi.com](https://plurobi.com/) as the plugin's roadmap ships. Plus, more technical pits I'll be working on independently along the way.
+
+--8<-- "cta-book-call.md"

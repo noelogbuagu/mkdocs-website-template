@@ -145,3 +145,5 @@ Next Monday, I'll write about how to prove a migration actually worked because I
 In Freaky Friday, the swap lasts a day. Ours is permanent, and I now have a lot more respect for the work Fivetran does. It's real value they provide. Honestly, expensive but real. Ask me how the swap is going when the plan comes up for renewal.
 
 What's the first cost you'd check before building your own pipeline?
+
+--8<-- "cta-book-call.md"

@@ -83,3 +83,5 @@ Numbers like that only mean something if the count underneath them is honest. If
 ## What "self-serve" actually means
 
 The experience made me realise that self-serve analytics isn't just about a fast-loading dashboard. Rather, it's about ensuring accuracy in any reporting that influences people's decisions. The loop's finally broken. No downloading CSVs and doing repetitive analyses anymore!
+
+--8<-- "cta-book-call.md"
