@@ -227,7 +227,7 @@ My server can already speak the first two. But to access it from a phone, it has
 
 **It's built around my questions.** The aim file is general, but my work shaped the card's "For the aim" fields. Someone interested in sport or makeup would want different headings. That's the fun part about AI, though. It allows individual customisation at a level we previously haven't experienced before. I can allow people to specify how they want their agent to write the notes or its personality.
 
-I'm not publishing the code yet. I want it tested and safe first, and I don't want to share a tool that makes someone else's setup harder than it needs to be.
+The transcript tool is public now, and it's free: [youtube-transcript-mcp](https://github.com/noelogbuagu/youtube-transcript-mcp). It runs on your own computer, and the README shows how to add it to Claude Code or Claude Desktop. It's the plain version, without the cache, so there's no database to set up. My notebook stays private because it holds my own notes, but there's an example folder you can copy.
 
 If you watch a lot of videos for work, what's the last one you'd have forgotten by Friday?
 
